@@ -39,7 +39,7 @@ public class ChatServerGUI extends JFrame {
     private JPanel chartPanel;
     
     // Trạng thái cơ sở dữ liệu
-    private boolean isDatabaseConnected = false;
+    boolean isDatabaseConnected = false;
     
     // Màu sắc cho giao diện
     private final Color COLOR_SUCCESS = new Color(0, 130, 0);
@@ -145,10 +145,6 @@ public class ChatServerGUI extends JFrame {
         // Tab Cài đặt
         JPanel settingsPanel = createSettingsPanel();
         tabbedPane.addTab("Cài đặt", null, settingsPanel, "Thay đổi cài đặt server");
-        
-        // Tab Giới thiệu
-        JPanel aboutPanel = createAboutPanel();
-        tabbedPane.addTab("Giới thiệu", null, aboutPanel, "Thông tin về ứng dụng");
         
         // Thêm vào panel chính
         mainPanel.add(createControlPanel(), BorderLayout.NORTH);
@@ -780,7 +776,7 @@ public class ChatServerGUI extends JFrame {
         settingsPanel.add(new JLabel("Thư mục xuất dữ liệu mặc định:"));
         JPanel pathPanel = new JPanel(new BorderLayout(5, 0));
         pathPanel.setBackground(COLOR_BACKGROUND);
-        JTextField tfExportPath = new JTextField("1.database");
+        JTextField tfExportPath = new JTextField("database");
         JButton btnBrowse = new JButton("...");
         btnBrowse.addActionListener(e -> {
             JFileChooser chooser = new JFileChooser();
@@ -792,6 +788,11 @@ public class ChatServerGUI extends JFrame {
         pathPanel.add(tfExportPath, BorderLayout.CENTER);
         pathPanel.add(btnBrowse, BorderLayout.EAST);
         settingsPanel.add(pathPanel);
+        
+        // Cài đặt khóa mã hóa Vigenere
+        settingsPanel.add(new JLabel("Khóa mã hóa Vigenere:"));
+        JTextField tfEncryptionKey = new JTextField("CHATAPP");
+        settingsPanel.add(tfEncryptionKey);
         
         // Nút lưu cài đặt
         JButton btnSaveSettings = new JButton("Lưu cài đặt");
@@ -806,89 +807,6 @@ public class ChatServerGUI extends JFrame {
         
         panel.add(settingsPanel, BorderLayout.NORTH);
         panel.add(buttonPanel, BorderLayout.SOUTH);
-        
-        return panel;
-    }
-    
-    private JPanel createAboutPanel() {
-        JPanel panel = new JPanel(new BorderLayout(10, 10));
-        panel.setBackground(COLOR_BACKGROUND);
-        panel.setBorder(new EmptyBorder(10, 10, 10, 10));
-        
-        // Logo hoặc ảnh
-        JPanel logoPanel = new JPanel(new BorderLayout());
-        logoPanel.setBackground(COLOR_BACKGROUND);
-        // Nếu có logo, thêm vào đây
-        JLabel lblLogo = new JLabel("CHAT SERVER", SwingConstants.CENTER);
-        lblLogo.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 36));
-        lblLogo.setForeground(new Color(0, 102, 204));
-        logoPanel.add(lblLogo, BorderLayout.CENTER);
-        
-        // Thông tin ứng dụng
-        JPanel infoPanel = new JPanel(new BorderLayout());
-        infoPanel.setBackground(COLOR_BACKGROUND);
-        infoPanel.setBorder(BorderFactory.createTitledBorder(
-                BorderFactory.createEtchedBorder(), "Thông tin ứng dụng", 
-                TitledBorder.LEFT, TitledBorder.TOP, FONT_BOLD));
-        
-        JTextArea taInfo = new JTextArea();
-        taInfo.setEditable(false);
-        taInfo.setLineWrap(true);
-        taInfo.setWrapStyleWord(true);
-        taInfo.setFont(FONT_NORMAL);
-        taInfo.setBackground(COLOR_BACKGROUND);
-        taInfo.setText(
-            "Chat Server Monitor\n\n" +
-            "Phiên bản: 1.0.0\n" +
-            "Ngày phát hành: 04/04/2025\n\n" +
-            "Ứng dụng Chat Server là một hệ thống cho phép nhiều người dùng kết nối và trao đổi tin nhắn. " +
-            "Server đóng vai trò trung gian, quản lý kết nối, lưu trữ và chuyển tiếp tin nhắn giữa các client.\n\n" +
-            "Tính năng chính:\n" +
-            "- Hỗ trợ nhiều kết nối client đồng thời\n" +
-            "- Lưu trữ tin nhắn trong cơ sở dữ liệu SQLite\n" +
-            "- Hiển thị thống kê về người dùng và tin nhắn\n" +
-            "- Xuất dữ liệu ra file văn bản\n" +
-            "- Hỗ trợ tìm kiếm và lọc tin nhắn\n\n" +
-            "Phát triển bởi: 52300262 - Phạm Hoài Thương\n"
-        );
-        
-        JScrollPane scrollPane = new JScrollPane(taInfo);
-        scrollPane.setBorder(null);
-        infoPanel.add(scrollPane, BorderLayout.CENTER);
-        
-        // Phiên bản Java và hệ thống
-        JPanel systemPanel = new JPanel(new BorderLayout());
-        systemPanel.setBackground(COLOR_BACKGROUND);
-        systemPanel.setBorder(BorderFactory.createTitledBorder(
-                BorderFactory.createEtchedBorder(), "Thông tin hệ thống", 
-                TitledBorder.LEFT, TitledBorder.TOP, FONT_BOLD));
-        
-        JTextArea taSystem = new JTextArea();
-        taSystem.setEditable(false);
-        taSystem.setLineWrap(true);
-        taSystem.setWrapStyleWord(true);
-        taSystem.setFont(FONT_NORMAL);
-        taSystem.setBackground(COLOR_BACKGROUND);
-        
-        // Lấy thông tin hệ thống
-        String javaVersion = System.getProperty("java.version");
-        String osName = System.getProperty("os.name");
-        String osVersion = System.getProperty("os.version");
-        String osArch = System.getProperty("os.arch");
-        
-        taSystem.setText(
-            "Java: " + javaVersion + "\n" +
-            "Hệ điều hành: " + osName + " " + osVersion + "\n" +
-            "Kiến trúc: " + osArch + "\n" +
-            "SQLite JDBC: 349.1.0\n"
-        );
-        
-        systemPanel.add(taSystem, BorderLayout.CENTER);
-        
-        // Kết hợp các panel
-        panel.add(logoPanel, BorderLayout.NORTH);
-        panel.add(infoPanel, BorderLayout.CENTER);
-        panel.add(systemPanel, BorderLayout.SOUTH);
         
         return panel;
     }
@@ -1063,7 +981,7 @@ public class ChatServerGUI extends JFrame {
         fileChooser.setFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("Text files", "txt"));
         
         // Thư mục mặc định để lưu
-        File defaultDir = new File("1.database");
+        File defaultDir = new File("database");
         if (!defaultDir.exists()) {
             defaultDir.mkdir();
         }
@@ -1311,13 +1229,15 @@ public class ChatServerGUI extends JFrame {
         model.addColumn("STT");
         model.addColumn("Thời gian");
         model.addColumn("Người dùng");
-        model.addColumn("Tin nhắn");
+        model.addColumn("Tin nhắn gốc");
+        model.addColumn("Tin nhắn mã hóa");
         
         JTable table = new JTable(model);
-        table.getColumnModel().getColumn(0).setPreferredWidth(50);
-        table.getColumnModel().getColumn(1).setPreferredWidth(150);
-        table.getColumnModel().getColumn(2).setPreferredWidth(100);
-        table.getColumnModel().getColumn(3).setPreferredWidth(400);
+        table.getColumnModel().getColumn(0).setPreferredWidth(40);
+        table.getColumnModel().getColumn(1).setPreferredWidth(120);
+        table.getColumnModel().getColumn(2).setPreferredWidth(80);
+        table.getColumnModel().getColumn(3).setPreferredWidth(250);
+        table.getColumnModel().getColumn(4).setPreferredWidth(250);
         table.setRowHeight(25);
         table.setFont(FONT_NORMAL);
         
@@ -1399,9 +1319,9 @@ public class ChatServerGUI extends JFrame {
             int totalMessages = server.getDatabaseManager().getMessagesCountByPort(server.getServerPort());
             
             if (searchText == null || searchText.isEmpty()) {
-                rs = server.getDatabaseManager().getRecentMessages(1000, server.getServerPort());
+                rs = server.getDatabaseManager().getMessagesWithEncryption(1000, server.getServerPort());
             } else {
-                rs = server.getDatabaseManager().searchMessages(searchText, server.getServerPort());
+                rs = server.getDatabaseManager().searchMessagesWithEncryption(searchText, server.getServerPort());
             }
             
             boolean hasMessages = false;
@@ -1412,16 +1332,22 @@ public class ChatServerGUI extends JFrame {
                 rowCount++;
                 String username = rs.getString("username");
                 String message = rs.getString("message");
+                String originalMsg = rs.getString("original_message");
+                String encryptedMsg = rs.getString("encrypted_message");
                 String timestamp = rs.getString("timestamp");
                 
-                model.addRow(new Object[]{rowCount, timestamp, username, message});
+                // Nếu không có tin nhắn gốc/mã hóa riêng, sử dụng tin nhắn chính
+                if (originalMsg == null || originalMsg.isEmpty()) originalMsg = message;
+                if (encryptedMsg == null || encryptedMsg.isEmpty()) encryptedMsg = message;
+                
+                model.addRow(new Object[]{rowCount, timestamp, username, originalMsg, encryptedMsg});
             }
             
             if (!hasMessages) {
                 if (searchText != null && !searchText.isEmpty()) {
-                    model.addRow(new Object[]{"", "", "Không tìm thấy tin nhắn phù hợp.", ""});
+                    model.addRow(new Object[]{"", "", "Không tìm thấy tin nhắn phù hợp.", "", ""});
                 } else {
-                    model.addRow(new Object[]{"", "", "Chưa có tin nhắn nào trên port này.", ""});
+                    model.addRow(new Object[]{"", "", "Chưa có tin nhắn nào trên port này.", "", ""});
                 }
                 lblInfo.setText("Hiển thị 0/" + totalMessages + " tin nhắn");
             } else {
@@ -1449,7 +1375,7 @@ public class ChatServerGUI extends JFrame {
         fileChooser.setFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("Text files", "txt"));
         
         // Thư mục mặc định để lưu
-        File defaultDir = new File("1.database");
+        File defaultDir = new File("database");
         if (!defaultDir.exists()) {
             defaultDir.mkdir();
         }
@@ -1761,6 +1687,34 @@ public class ChatServerGUI extends JFrame {
                 if (message.contains(":") && !message.startsWith("[") && isDatabaseConnected) {
                     updateStatistics();
                 }
+            }
+        });
+    }
+    
+    // Phương thức để hiển thị tin nhắn so sánh giữa đoạn văn bản đã mã hóa và bản gốc
+    public void logCompareMessage(String username, String encryptedContent, String originalContent) {
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                String timeStamp = sdf.format(new Date());
+                
+                // Hiển thị theo định dạng so sánh
+                taLog.append("╔══════════════════════════════════════════════════════════════════════════╗\n");
+                taLog.append("║ [" + timeStamp + "] " + username + " gửi tin nhắn:\n");
+                taLog.append("║ ┌────────────────────────────────────────────────────────────────────┐\n");
+                taLog.append("║ │ Nội dung gốc:    " + originalContent + "\n");
+                taLog.append("║ │ Mã hóa Vigenere: " + encryptedContent + "\n");
+                taLog.append("║ └────────────────────────────────────────────────────────────────────┘\n");
+                taLog.append("╚══════════════════════════════════════════════════════════════════════════╝\n");
+                
+                // Cập nhật thống kê nếu cần
+                if (isDatabaseConnected) {
+                    updateStatistics();
+                }
+                
+                // Cập nhật biểu đồ nếu cần
+                updateChartData();
             }
         });
     }

@@ -16,10 +16,12 @@ public class ChatServer {
     private int serverPort = 0;
     private int totalClients = 0;
     private static final Logger logger = Logger.getLogger(ChatServer.class.getName());
+    private final VigenereCipher cipher;
 
     public ChatServer(ChatServerGUI gui) {
         this.gui = gui;
         this.dbManager = new DatabaseManager();
+        this.cipher = new VigenereCipher();
         setupLogger();
     }
     
@@ -159,14 +161,32 @@ public class ChatServer {
             }
         }
         
-        // Lưu tin nhắn vào database với port
+        // Phân tích tin nhắn
+        String originalMessage = "";
+        String encryptedContent = "";
+        
+        if (message.startsWith(sender.getUsername() + ": ")) {
+            encryptedContent = message.substring((sender.getUsername() + ": ").length());
+            String decryptedContent = cipher.decrypt(encryptedContent);
+            originalMessage = sender.getUsername() + ": " + decryptedContent;
+        } else {
+            originalMessage = message;
+        }
+        
+        // Lưu tin nhắn gốc vào database với port
         String hostname = sender.getClientHostname();
         String ipAddress = sender.getClientIpAddress();
         String username = sender.getUsername();
-        dbManager.saveMessage(hostname, ipAddress, username, message, serverPort);
+        dbManager.saveMessage(hostname, ipAddress, username, originalMessage, serverPort);
         
-        // Log tin nhắn trên server
-        gui.logMessage(message);
+        // Kiểm tra nếu tin nhắn chứa nội dung mã hóa
+        if (!encryptedContent.isEmpty()) {
+            // Log tin nhắn trên server với thông tin so sánh
+            gui.logCompareMessage(username, encryptedContent, cipher.decrypt(encryptedContent));
+        } else {
+            // Log tin nhắn trên server (thông báo hệ thống)
+            gui.logMessage(message);
+        }
     }
     
     public void removeClient(ClientHandler client) {
@@ -212,6 +232,10 @@ public class ChatServer {
     
     public DatabaseManager getDatabaseManager() {
         return dbManager;
+    }
+    
+    public VigenereCipher getCipher() {
+        return cipher;
     }
     
     private class ConnectionAcceptor implements Runnable {

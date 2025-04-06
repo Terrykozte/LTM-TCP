@@ -49,13 +49,14 @@ public class ClientHandler implements Runnable {
             // Thông báo cho các client khác
             server.broadcastMessage(username + " đã tham gia chat!", this);
             
-            String message;
-            while ((message = reader.readLine()) != null) {
-                if (message.startsWith("DISCONNECT:")) {
+            String encryptedMessage;
+            while ((encryptedMessage = reader.readLine()) != null) {
+                if (encryptedMessage.startsWith("DISCONNECT:")) {
                     server.logMessage(username + " đã ngắt kết nối từ server port " + serverPort);
                     break;
                 } else {
-                    String fullMessage = username + ": " + message;
+                    // Gửi tin nhắn đã mã hóa đến tất cả clients
+                    String fullMessage = username + ": " + encryptedMessage;
                     server.broadcastMessage(fullMessage, this);
                 }
             }
