@@ -1,0 +1,6 @@
+Apr 04, 2025 11:37:00 AM chatclient.ChatClientGUI connectToServer
+INFO: Đã kết nối đến server localhost port 12345
+Apr 04, 2025 11:37:14 AM chatclient.ChatClientGUI$7 run
+INFO: Server đã đóng kết nối
+Apr 04, 2025 11:37:14 AM chatclient.ChatClientGUI$7 run
+INFO: Server đã đóng kết nối
