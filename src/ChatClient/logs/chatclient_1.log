@@ -1,0 +1,120 @@
+Apr 07, 2025 10:11:17 PM chatclient.ChatClient connect
+SEVERE: Cannot connect to server
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at chatclient.ChatClient.connect(ChatClient.java:25)
+	at chatclient.ChatClientGUI$3.doInBackground(ChatClientGUI.java:500)
+	at chatclient.ChatClientGUI$3.doInBackground(ChatClientGUI.java:496)
+	at javax.swing.SwingWorker$1.call(SwingWorker.java:295)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at javax.swing.SwingWorker.run(SwingWorker.java:334)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+Apr 07, 2025 10:11:38 PM chatclient.ChatClient connect
+SEVERE: Cannot connect to server
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at chatclient.ChatClient.connect(ChatClient.java:25)
+	at chatclient.ChatClientGUI$3.doInBackground(ChatClientGUI.java:500)
+	at chatclient.ChatClientGUI$3.doInBackground(ChatClientGUI.java:496)
+	at javax.swing.SwingWorker$1.call(SwingWorker.java:295)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at javax.swing.SwingWorker.run(SwingWorker.java:334)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+Apr 07, 2025 10:11:48 PM chatclient.ChatClient connect
+INFO: Connected to server localhost on port 12345 as Terry
+Apr 07, 2025 10:14:00 PM chatclient.ChatClient sendMessage
+INFO: Message sent: asd
+Apr 07, 2025 10:14:49 PM chatclient.ChatClient$MessageReader run
+INFO: Message received from Tai
+Apr 07, 2025 10:14:57 PM chatclient.ChatClient sendMessage
+INFO: Message sent: he
+Apr 07, 2025 10:22:28 PM chatclient.ChatClient disconnect
+INFO: Disconnected from server
+Apr 07, 2025 10:23:21 PM chatclient.ChatClient connect
+INFO: Connected to server localhost on port 12345 as Terry
+Apr 07, 2025 10:23:32 PM chatclient.ChatClient sendMessage
+INFO: Message sent: asdsad
+Apr 07, 2025 10:23:46 PM chatclient.ChatClient sendMessage
+INFO: Message sent: hhee
+Apr 07, 2025 10:24:20 PM chatclient.ChatClient disconnect
+INFO: Disconnected from server
+Apr 07, 2025 10:26:52 PM chatclient.ChatClient connect
+INFO: Connected to server localhost on port 12345 as Terry
+Apr 07, 2025 10:27:18 PM chatclient.ChatClient sendMessage
+INFO: Message sent: assssssssssssssssssssssssssssssssssssssassssssssssssssssssssssssssssssssssssssassssssssssssssssssssssssssssssssssssssassssssssssssssssssssssssssssssssssssssassssssssssssssssssssssssssssssssssssssassssssssssssssssssssssssssssssssssssssassssssssssssssssssssssssssssssssssssssassssssssssssssssssssssssssssssssssssssassssssssssssssssssssssssssssssssssssssassssssssssssssssssssssssssssssssssssssassssssssssssssssssssssssssssssssssssss
+Apr 07, 2025 10:28:26 PM chatclient.ChatClient disconnect
+INFO: Disconnected from server
+Apr 07, 2025 10:48:00 PM chatclient.ChatClient connect
+INFO: Connected to server localhost on port 12345 as Terry
+Apr 07, 2025 10:48:04 PM chatclient.ChatClient sendMessage
+INFO: Message sent: hhehe
+Apr 07, 2025 10:48:06 PM chatclient.ChatClient sendMessage
+INFO: Message sent: ashdashd
+Apr 07, 2025 10:48:12 PM chatclient.ChatClient disconnect
+INFO: Disconnected from server
+Apr 07, 2025 10:48:22 PM chatclient.ChatClient connect
+INFO: Connected to server localhost on port 12345 as Terry
+Apr 07, 2025 10:48:31 PM chatclient.ChatClient sendMessage
+INFO: Message sent: He
+Apr 07, 2025 10:48:36 PM chatclient.ChatClient sendMessage
+INFO: Message sent: he  he
+Apr 07, 2025 10:48:43 PM chatclient.ChatClient sendMessage
+INFO: Message sent: e
+Apr 07, 2025 10:48:46 PM chatclient.ChatClient sendMessage
+INFO: Message sent: ea
+Apr 07, 2025 10:48:46 PM chatclient.ChatClient sendMessage
+INFO: Message sent: as
+Apr 07, 2025 10:48:47 PM chatclient.ChatClient sendMessage
+INFO: Message sent: da
+Apr 07, 2025 10:48:49 PM chatclient.ChatClient sendMessage
+INFO: Message sent: asdae
+Apr 07, 2025 10:51:57 PM chatclient.ChatClient connect
+SEVERE: Cannot connect to server
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at chatclient.ChatClient.connect(ChatClient.java:25)
+	at chatclient.ChatClientGUI$3.doInBackground(ChatClientGUI.java:586)
+	at chatclient.ChatClientGUI$3.doInBackground(ChatClientGUI.java:582)
+	at javax.swing.SwingWorker$1.call(SwingWorker.java:295)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at javax.swing.SwingWorker.run(SwingWorker.java:334)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
