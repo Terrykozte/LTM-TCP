@@ -1,79 +1,66 @@
 package chatclient;
 
-/**
- * Implements the Vigenere cipher for text encryption and decryption
- */
 public class VigenereCipher {
-    private static final String DEFAULT_KEY = "CHATAPP";
+    private static final String DEFAULT_KEY = "SECRETKEY";
     
-    /**
-     * Encrypts a message using the default key
-     * @param text The plaintext message to encrypt
-     * @return The encrypted message
-     */
+    private String key;
+    
+    public VigenereCipher() {
+        this.key = DEFAULT_KEY;
+    }
+    
+    public VigenereCipher(String key) {
+        this.key = key;
+    }
+    
+    public void setKey(String key) {
+        this.key = key;
+    }
+    
     public String encrypt(String text) {
-        return encrypt(text, DEFAULT_KEY);
-    }
-    
-    /**
-     * Decrypts a message using the default key
-     * @param text The encrypted message to decrypt
-     * @return The original plaintext message
-     */
-    public String decrypt(String text) {
-        return decrypt(text, DEFAULT_KEY);
-    }
-    
-    /**
-     * Encrypts a message using a custom key
-     * @param text The plaintext message to encrypt
-     * @param key The encryption key
-     * @return The encrypted message
-     */
-    public String encrypt(String text, String key) {
         StringBuilder result = new StringBuilder();
+        String upperText = text.toUpperCase();
+        String upperKey = key.toUpperCase();
         
-        for (int i = 0, j = 0; i < text.length(); i++) {
-            char c = text.charAt(i);
-            if (Character.isLetter(c)) {
-                boolean isUpperCase = Character.isUpperCase(c);
-                char base = isUpperCase ? 'A' : 'a';
-                char keyChar = Character.toUpperCase(key.charAt(j % key.length()));
+        int keyLength = upperKey.length();
+        
+        for (int i = 0; i < upperText.length(); i++) {
+            char ch = upperText.charAt(i);
+            
+            if (Character.isLetter(ch)) {
+                int textIndex = ch - 'A';
+                int keyIndex = upperKey.charAt(i % keyLength) - 'A';
+                int encryptedIndex = (textIndex + keyIndex) % 26;
                 
-                // Vigenere encryption formula: (plaintext + key) % 26
-                int encryptedChar = (c - base + (keyChar - 'A')) % 26 + base;
-                result.append((char) encryptedChar);
-                j++;
+                char encryptedChar = (char) (encryptedIndex + 'A');
+                result.append(encryptedChar);
             } else {
-                result.append(c);
+                result.append(ch);
             }
         }
         
         return result.toString();
     }
     
-    /**
-     * Decrypts a message using a custom key
-     * @param text The encrypted message to decrypt
-     * @param key The encryption key
-     * @return The original plaintext message
-     */
-    public String decrypt(String text, String key) {
+    public String decrypt(String text) {
         StringBuilder result = new StringBuilder();
+        String upperText = text.toUpperCase();
+        String upperKey = key.toUpperCase();
         
-        for (int i = 0, j = 0; i < text.length(); i++) {
-            char c = text.charAt(i);
-            if (Character.isLetter(c)) {
-                boolean isUpperCase = Character.isUpperCase(c);
-                char base = isUpperCase ? 'A' : 'a';
-                char keyChar = Character.toUpperCase(key.charAt(j % key.length()));
+        int keyLength = upperKey.length();
+        
+        for (int i = 0; i < upperText.length(); i++) {
+            char ch = upperText.charAt(i);
+            
+            if (Character.isLetter(ch)) {
+                int textIndex = ch - 'A';
+                int keyIndex = upperKey.charAt(i % keyLength) - 'A';
+                int decryptedIndex = (textIndex - keyIndex + 26) % 26;
                 
-                // Vigenere decryption formula: (ciphertext - key + 26) % 26
-                int decryptedChar = (c - base - (keyChar - 'A') + 26) % 26 + base;
-                result.append((char) decryptedChar);
-                j++;
+                char decryptedChar = (char) (decryptedIndex + 'A');
+                result.append(decryptedChar);
             } else {
-                result.append(c);
+                result.append(ch);
             }
         }
         

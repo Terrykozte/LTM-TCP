@@ -1,0 +1,326 @@
+Apr 16, 2025 6:43:57 AM chatclient.ChatClientGUI createTempDirectory
+INFO: Created temp directory: C:\Users\TERRYK~1\AppData\Local\Temp\\chatclient_1744760637158_1
+Apr 16, 2025 6:44:18 AM chatclient.ChatClient connect
+INFO: Connected to server: localhost:12345 as Viet
+Apr 16, 2025 6:46:00 AM chatclient.ChatClient sendMessage
+SEVERE: Error sending message
+java.security.InvalidKeyException: Illegal key size or default parameters
+	at javax.crypto.Cipher.checkCryptoPerm(Cipher.java:1026)
+	at javax.crypto.Cipher.implInit(Cipher.java:801)
+	at javax.crypto.Cipher.chooseProvider(Cipher.java:864)
+	at javax.crypto.Cipher.init(Cipher.java:1249)
+	at javax.crypto.Cipher.init(Cipher.java:1186)
+	at chatclient.ChatClient$SimpleCipher.encrypt(ChatClient.java:502)
+	at chatclient.ChatClient.sendMessage(ChatClient.java:112)
+	at chatclient.ChatClientGUI.sendMessage(ChatClientGUI.java:1638)
+	at chatclient.ChatClientGUI.lambda$createChatPanel$9(ChatClientGUI.java:1394)
+	at chatclient.ChatClientGUI$$Lambda$32/1532285476.actionPerformed(Unknown Source)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2346)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:289)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:289)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:289)
+	at java.awt.Component.processMouseEvent(Component.java:6525)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6290)
+	at java.awt.Container.processEvent(Container.java:2234)
+	at java.awt.Component.dispatchEventImpl(Component.java:4881)
+	at java.awt.Container.dispatchEventImpl(Container.java:2292)
+	at java.awt.Component.dispatchEvent(Component.java:4703)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4898)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4533)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4462)
+	at java.awt.Container.dispatchEventImpl(Container.java:2278)
+	at java.awt.Window.dispatchEventImpl(Window.java:2750)
+	at java.awt.Component.dispatchEvent(Component.java:4703)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+
+Apr 16, 2025 6:46:02 AM chatclient.ChatClient disconnect
+INFO: Disconnected from server
+Apr 16, 2025 9:00:07 AM chatclient.LoginRegisterManager loadUsers
+INFO: Loaded 1 users from file
+Apr 16, 2025 9:00:07 AM chatclient.ChatClientGUI createTempDirectory
+INFO: Created temp directory: C:\Users\TERRYK~1\AppData\Local\Temp\\chatclient_1744768807277_1
+Apr 16, 2025 9:00:11 AM chatclient.LoginRegisterManager login
+WARNING: Login failed for user: Terry
+Apr 16, 2025 9:00:20 AM chatclient.LoginRegisterManager login
+WARNING: Login failed for user: Terry
+Apr 16, 2025 9:01:10 AM chatclient.LoginRegisterManager saveUsers
+INFO: Saved 2 users to file
+Apr 16, 2025 9:01:10 AM chatclient.LoginRegisterManager register
+INFO: User registered successfully: Thuong
+Apr 16, 2025 9:01:13 AM chatclient.LoginRegisterManager login
+INFO: Login successful for user: Thuong
+Apr 16, 2025 9:01:13 AM chatclient.ChatClient connect
+INFO: Connected to server: localhost:12345 as Thuong
+Apr 16, 2025 9:01:13 AM chatclient.ChatClient sendMessage
+INFO: Message sent: REQUEST_CHAT_HISTORY
+Apr 16, 2025 9:01:16 AM chatclient.ChatClient sendMessage
+INFO: Message sent: hi
+Apr 16, 2025 9:01:17 AM chatclient.ChatClient sendMessage
+INFO: Message sent: hi
+Apr 16, 2025 9:01:23 AM chatclient.ChatClient sendMessage
+INFO: Message sent: hi
+Apr 16, 2025 9:01:24 AM chatclient.ChatClient sendMessage
+INFO: Message sent: hi
+Apr 16, 2025 9:01:25 AM chatclient.ChatClient sendMessage
+INFO: Message sent: ?
+Apr 16, 2025 9:01:28 AM chatclient.ChatClient sendMessage
+INFO: Message sent: helo
+Apr 16, 2025 9:07:16 AM chatclient.LoginRegisterManager login
+INFO: Login successful for user: Thuong
+Apr 16, 2025 9:07:18 AM chatclient.ChatClient connect
+SEVERE: Could not connect to server
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at chatclient.ChatClient.connect(ChatClient.java:77)
+	at chatclient.ChatClientGUI$4.doInBackground(ChatClientGUI.java:850)
+	at chatclient.ChatClientGUI$4.doInBackground(ChatClientGUI.java:847)
+	at javax.swing.SwingWorker$1.call(SwingWorker.java:295)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at javax.swing.SwingWorker.run(SwingWorker.java:334)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+Apr 16, 2025 9:54:11 AM chatclient.LoginRegisterManager loadUsers
+INFO: Loaded 2 users from file
+Apr 16, 2025 9:54:11 AM chatclient.ChatClientGUI createTempDirectory
+INFO: Created temp directory: C:\Users\TERRYK~1\AppData\Local\Temp\\chatclient_1744772051288_1
+Apr 16, 2025 9:54:23 AM chatclient.LoginRegisterManager login
+INFO: Login successful for user: Thuong
+Apr 16, 2025 9:54:23 AM chatclient.ChatClient connect
+INFO: Connected to server: localhost:12345 as Thuong
+Apr 16, 2025 9:54:23 AM chatclient.ChatClient sendMessage
+INFO: Message sent: REQUEST_CHAT_HISTORY
+Apr 16, 2025 9:54:25 AM chatclient.ChatClient sendMessage
+INFO: Message sent: hel
+Apr 16, 2025 10:02:24 AM chatclient.LoginRegisterManager login
+INFO: Login successful for user: Thuong
+Apr 16, 2025 10:02:24 AM chatclient.ChatClient connect
+INFO: Connected to server: localhost:12345 as Thuong
+Apr 16, 2025 10:02:24 AM chatclient.ChatClient sendMessage
+INFO: Message sent: REQUEST_CHAT_HISTORY
+Apr 16, 2025 10:02:29 AM chatclient.ChatClient sendMessage
+INFO: Message sent: Terry
+Apr 16, 2025 10:03:09 AM chatclient.ChatClient disconnect
+INFO: Disconnected from server
+Apr 16, 2025 10:03:09 AM chatclient.LoginRegisterManager login
+INFO: Login successful for user: Thuong
+Apr 16, 2025 10:03:09 AM chatclient.ChatClient connect
+INFO: Connected to server: localhost:12345 as Thuong
+Apr 16, 2025 10:03:09 AM chatclient.ChatClient sendMessage
+INFO: Message sent: REQUEST_CHAT_HISTORY
+Apr 16, 2025 10:03:11 AM chatclient.ChatClient sendMessage
+INFO: Message sent: asd
+Apr 16, 2025 10:03:19 AM chatclient.ChatClient sendMessage
+INFO: Message sent: 1
+Apr 16, 2025 10:03:21 AM chatclient.ChatClient disconnect
+INFO: Disconnected from server
+Apr 16, 2025 10:03:22 AM chatclient.LoginRegisterManager login
+INFO: Login successful for user: Thuong
+Apr 16, 2025 10:03:22 AM chatclient.ChatClient connect
+INFO: Connected to server: localhost:12345 as Thuong
+Apr 16, 2025 10:03:22 AM chatclient.ChatClient sendMessage
+INFO: Message sent: REQUEST_CHAT_HISTORY
+Apr 16, 2025 10:04:27 AM chatclient.ChatClient disconnect
+INFO: Disconnected from server
+Apr 16, 2025 10:09:50 AM chatclient.LoginRegisterManager loadUsers
+INFO: Loaded 2 users from file
+Apr 16, 2025 10:09:50 AM chatclient.ChatClientGUI createTempDirectory
+INFO: Created temp directory: C:\Users\TERRYK~1\AppData\Local\Temp\\chatclient_1744772990662_1
+Apr 16, 2025 10:09:59 AM chatclient.LoginRegisterManager login
+INFO: Login successful for user: Thuong
+Apr 16, 2025 10:09:59 AM chatclient.ChatClient connect
+INFO: Connected to server: localhost:12345 as Thuong
+Apr 16, 2025 10:09:59 AM chatclient.ChatClient sendMessage
+INFO: Message sent: REQUEST_CHAT_HISTORY
+Apr 16, 2025 10:10:02 AM chatclient.ChatClient sendMessage
+INFO: Message sent: he
+Apr 16, 2025 10:16:35 AM chatclient.ChatClient disconnect
+INFO: Disconnected from server
+Apr 16, 2025 10:16:36 AM chatclient.LoginRegisterManager login
+INFO: Login successful for user: Thuong
+Apr 16, 2025 10:16:36 AM chatclient.ChatClient connect
+INFO: Connected to server: localhost:12345 as Thuong
+Apr 16, 2025 10:16:36 AM chatclient.ChatClient sendMessage
+INFO: Message sent: REQUEST_CHAT_HISTORY
+Apr 16, 2025 10:16:41 AM chatclient.ChatClient disconnect
+INFO: Disconnected from server
+Apr 16, 2025 10:23:53 AM chatclient.LoginRegisterManager loadUsers
+INFO: Loaded 2 users from file
+Apr 16, 2025 10:24:00 AM chatclient.LoginRegisterManager login
+INFO: Login successful for user: Thuong
+Apr 16, 2025 10:24:00 AM chatclient.ChatClient connect
+INFO: Connected to server: localhost:12345 as Thuong
+Apr 16, 2025 10:46:25 AM chatclient.LoginRegisterManager loadUsers
+INFO: Loaded 2 users from file
+Apr 16, 2025 10:46:25 AM chatclient.ChatClientGUI createTempDirectory
+INFO: Created temp directory: C:\Users\TERRYK~1\AppData\Local\Temp\\chatclient_1744775185836_1
+Apr 16, 2025 11:11:44 AM chatclient.LoginRegisterManager loadUsers
+INFO: Loaded 2 users from file
+Apr 16, 2025 11:11:44 AM chatclient.ChatClientGUI createTempDirectory
+INFO: Created temp directory: C:\Users\TERRYK~1\AppData\Local\Temp\\chatclient_1744776704045_1
+Apr 16, 2025 11:12:00 AM chatclient.LoginRegisterManager login
+WARNING: Login attempt with non-existent username: Viet
+Apr 16, 2025 11:12:29 AM chatclient.LoginRegisterManager saveUsers
+INFO: Saved 3 users to file
+Apr 16, 2025 11:12:29 AM chatclient.LoginRegisterManager register
+INFO: User registered successfully: Viet
+Apr 16, 2025 11:12:31 AM chatclient.LoginRegisterManager login
+INFO: Login successful for user: Viet
+Apr 16, 2025 11:12:31 AM chatclient.ChatClient connect
+INFO: Connected to server: localhost:12345 as Viet
+Apr 16, 2025 3:22:27 PM chatclient.LoginRegisterManager loadUsers
+INFO: Loaded 3 users from file
+Apr 16, 2025 3:22:27 PM chatclient.ChatClientGUI createTempDirectory
+INFO: Created temp directory: C:\Users\TERRYK~1\AppData\Local\Temp\\chatclient_1744791747045_1
+Apr 16, 2025 3:22:34 PM chatclient.LoginRegisterManager login
+INFO: Login successful for user: Viet
+Apr 16, 2025 3:22:34 PM chatclient.ChatClient requestOnlineUsers
+INFO: Requested online users list
+Apr 16, 2025 3:22:34 PM chatclient.ChatClient connect
+INFO: Connected to server: localhost:12345 as Viet
+Apr 16, 2025 3:22:34 PM chatclient.ChatClient sendMessage
+INFO: Message sent: REQUEST_CHAT_HISTORY
+Apr 16, 2025 11:58:57 PM chatclient.LoginRegisterManager loadUsers
+INFO: Loaded 3 users from file
+Apr 16, 2025 11:58:57 PM chatclient.ChatClientGUI createTempDirectory
+INFO: Created temp directory: C:\Users\TERRYK~1\AppData\Local\Temp\\chatclient_1744822737262_1
+Apr 16, 2025 11:59:05 PM chatclient.LoginRegisterManager login
+WARNING: Login failed for user: Viet
+Apr 16, 2025 11:59:09 PM chatclient.LoginRegisterManager login
+INFO: Login successful for user: Viet
+Apr 16, 2025 11:59:09 PM chatclient.ChatClient requestOnlineUsers
+INFO: Requested online users list
+Apr 16, 2025 11:59:09 PM chatclient.ChatClient connect
+INFO: Connected to server: localhost:12345 as Viet
+Apr 16, 2025 11:59:09 PM chatclient.ChatClient$MessageReader processUserList
+INFO: Received user list: Thuong,
+Apr 16, 2025 11:59:09 PM chatclient.ChatClient$MessageReader processUserList
+INFO: Received user list: Thuong,
+Apr 16, 2025 11:59:09 PM chatclient.ChatClient$MessageReader processUserList
+INFO: Received user list: Thuong,
+Apr 16, 2025 11:59:09 PM chatclient.ChatClient sendMessage
+INFO: Message sent: REQUEST_CHAT_HISTORY
+Apr 16, 2025 11:59:09 PM chatclient.ChatClient$MessageReader receiveAndDisplayChatHistory
+INFO: Received chat history with 12 messages
+Apr 16, 2025 11:59:14 PM chatclient.ChatClient sendMessage
+INFO: Message sent: Viet: hello
+Apr 17, 2025 12:04:22 AM chatclient.ChatClient$MessageReader handleFileHeader
+INFO: Receiving file: IMG_0062.HEIC, size: 967810, type: other:Thuong
+Apr 17, 2025 12:04:22 AM chatclient.ChatClient$MessageReader handleFileHeader
+INFO: Accepting file: IMG_0062.HEIC to be saved at: C:\Users\Terrykote\Downloads\IMG_0062.HEIC
+Apr 17, 2025 12:04:29 AM chatclient.ChatClient disconnect
+INFO: Disconnected from server
+Apr 17, 2025 5:42:43 AM chatclient.LoginRegisterManager loadUsers
+INFO: Loaded 3 users from file
+Apr 17, 2025 5:42:43 AM chatclient.ChatClientGUI createTempDirectory
+INFO: Created temp directory: C:\Users\TERRYK~1\AppData\Local\Temp\\chatclient_1744843363727_1
+Apr 17, 2025 5:42:53 AM chatclient.LoginRegisterManager login
+INFO: Login successful for user: Thuong
+Apr 17, 2025 5:42:53 AM chatclient.ChatClient requestOnlineUsers
+INFO: Requested online users list
+Apr 17, 2025 5:42:53 AM chatclient.ChatClient connect
+INFO: Connected to server: localhost:12345 as Thuong
+Apr 17, 2025 5:42:53 AM chatclient.ChatClient sendMessage
+INFO: Message sent: REQUEST_CHAT_HISTORY
+Apr 17, 2025 5:42:55 AM chatclient.ChatClient forceLogin
+INFO: Force login sent to server
+Apr 17, 2025 5:42:55 AM chatclient.ChatClient sendMessage
+INFO: Message sent: REQUEST_CHAT_HISTORY
+Apr 17, 2025 5:43:09 AM chatclient.FileTransferHandler selectFile
+INFO: Selected file: C:\Users\Terrykote\Downloads\Lab8.pdf
+Apr 17, 2025 5:43:09 AM chatclient.ChatClient sendFile
+INFO: Added file to transfer queue: Lab8.pdf
+Apr 17, 2025 5:43:09 AM chatclient.ChatClient$FileTransferProcessor run
+INFO: Sent file header: FILE_HEADER:Lab8.pdf:383982:document:375.0 KB
+Apr 17, 2025 5:46:26 AM chatclient.ChatClient$FileTransferProcessor run
+WARNING: File transfer rejected: Thuong đã rời chat!
+Apr 17, 2025 5:46:36 AM chatclient.ChatClient disconnect
+INFO: Disconnected from server
+Apr 17, 2025 6:05:45 AM chatclient.LoginRegisterManager loadUsers
+INFO: Loaded 3 users from file
+Apr 17, 2025 6:05:45 AM chatclient.ChatClientGUI createTempDirectory
+INFO: Created temp directory: C:\Users\TERRYK~1\AppData\Local\Temp\\chatclient_1744844745897_1
+Apr 17, 2025 6:05:54 AM chatclient.LoginRegisterManager login
+INFO: Login successful for user: Thuong
+Apr 17, 2025 6:05:54 AM chatclient.ChatClient requestOnlineUsers
+INFO: Requested online users list
+Apr 17, 2025 6:05:54 AM chatclient.ChatClient connect
+INFO: Connected to server: localhost:12345 as Thuong
+Apr 17, 2025 6:05:54 AM chatclient.ChatClient sendMessage
+INFO: Message sent: REQUEST_CHAT_HISTORY
+Apr 17, 2025 6:05:54 AM chatclient.ChatClient$MessageReader receiveAndDisplayChatHistory
+INFO: Received chat history with 0 messages
+Apr 17, 2025 6:06:15 AM chatclient.ChatClient disconnect
+INFO: Disconnected from server
+Apr 17, 2025 6:06:17 AM chatclient.LoginRegisterManager loadUsers
+INFO: Loaded 3 users from file
+Apr 17, 2025 6:06:17 AM chatclient.ChatClientGUI createTempDirectory
+INFO: Created temp directory: C:\Users\TERRYK~1\AppData\Local\Temp\\chatclient_1744844777230_1
+Apr 17, 2025 6:06:23 AM chatclient.LoginRegisterManager login
+INFO: Login successful for user: Thuong
+Apr 17, 2025 6:06:23 AM chatclient.ChatClient requestOnlineUsers
+INFO: Requested online users list
+Apr 17, 2025 6:06:23 AM chatclient.ChatClient connect
+INFO: Connected to server: localhost:12345 as Thuong
+Apr 17, 2025 6:06:23 AM chatclient.ChatClient sendMessage
+INFO: Message sent: REQUEST_CHAT_HISTORY
+Apr 17, 2025 6:06:23 AM chatclient.ChatClient$MessageReader receiveAndDisplayChatHistory
+INFO: Received chat history with 0 messages
+Apr 17, 2025 6:06:34 AM chatclient.FileTransferHandler selectFile
+INFO: Selected file: D:\Ảnh\PickTuresOfTerry\AP\IMG_0015.PNG
+Apr 17, 2025 6:06:34 AM chatclient.ChatClient sendFile
+INFO: Added file to transfer queue: IMG_0015.PNG
+Apr 17, 2025 6:06:35 AM chatclient.ChatClient$FileTransferProcessor run
+INFO: Sent file header: FILE_HEADER:IMG_0015.PNG:1832209:image:1.7 MB
+Apr 17, 2025 6:12:37 AM chatclient.ChatClient disconnect
+INFO: Disconnected from server
+Apr 17, 2025 6:12:37 AM chatclient.ChatClient$FileTransferProcessor run
+SEVERE: Error initiating file transfer
+java.net.SocketException: socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:170)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at chatclient.ChatClient$FileTransferProcessor.run(ChatClient.java:231)
+	at java.lang.Thread.run(Thread.java:745)
+
