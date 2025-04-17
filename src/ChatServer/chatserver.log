@@ -3530,3 +3530,467 @@ Apr 07, 2025 10:36:34 PM chatserver.DatabaseManager initializeDatabase
 INFO: Database được khởi tạo thành công
 Apr 07, 2025 10:36:34 PM chatserver.DatabaseManager connect
 INFO: Kết nối đến database thành công!
+Apr 08, 2025 3:46:17 PM chatserver.DatabaseManager initializeDatabase
+INFO: Database được khởi tạo thành công
+Apr 08, 2025 3:46:17 PM chatserver.DatabaseManager connect
+INFO: Kết nối đến database thành công!
+Apr 08, 2025 3:47:48 PM chatserver.DatabaseManager disconnect
+INFO: Đã đóng kết nối database!
+Apr 08, 2025 3:47:48 PM chatserver.ChatServer stop
+INFO: Server đã dừng trên port 12345
+Apr 12, 2025 10:53:12 AM chatserver.DatabaseManager initializeDatabase
+INFO: Database được khởi tạo thành công
+Apr 12, 2025 10:53:12 AM chatserver.DatabaseManager connect
+INFO: Kết nối đến database thành công!
+Apr 12, 2025 10:53:51 AM chatserver.DatabaseManager disconnect
+INFO: Đã đóng kết nối database!
+Apr 12, 2025 10:53:51 AM chatserver.ChatServer stop
+INFO: Server đã dừng trên port 12345
+Apr 12, 2025 10:53:51 AM chatserver.DatabaseManager logConnection
+SEVERE: Lỗi khi ghi log kết nối
+java.sql.SQLException: stmt pointer is closed
+	at org.sqlite.core.SafeStmtPtr.ensureOpen(SafeStmtPtr.java:148)
+	at org.sqlite.core.SafeStmtPtr.safeRun(SafeStmtPtr.java:127)
+	at org.sqlite.core.CorePreparedStatement.<init>(CorePreparedStatement.java:47)
+	at org.sqlite.jdbc3.JDBC3PreparedStatement.<init>(JDBC3PreparedStatement.java:32)
+	at org.sqlite.jdbc4.JDBC4PreparedStatement.<init>(JDBC4PreparedStatement.java:25)
+	at org.sqlite.jdbc4.JDBC4Connection.prepareStatement(JDBC4Connection.java:34)
+	at org.sqlite.jdbc3.JDBC3Connection.prepareStatement(JDBC3Connection.java:225)
+	at org.sqlite.jdbc3.JDBC3Connection.prepareStatement(JDBC3Connection.java:205)
+	at chatserver.DatabaseManager.logConnection(DatabaseManager.java:286)
+	at chatserver.ClientHandler.run(ClientHandler.java:74)
+	at java.lang.Thread.run(Thread.java:745)
+
+Apr 12, 2025 10:53:51 AM chatserver.DatabaseManager saveMessage
+SEVERE: Lỗi khi lưu tin nhắn
+java.sql.SQLException: database connection closed
+	at org.sqlite.SQLiteConnection.checkOpen(SQLiteConnection.java:429)
+	at org.sqlite.jdbc4.JDBC4Connection.prepareStatement(JDBC4Connection.java:31)
+	at org.sqlite.jdbc3.JDBC3Connection.prepareStatement(JDBC3Connection.java:225)
+	at org.sqlite.jdbc3.JDBC3Connection.prepareStatement(JDBC3Connection.java:205)
+	at chatserver.DatabaseManager.saveMessage(DatabaseManager.java:246)
+	at chatserver.ChatServer.broadcastMessage(ChatServer.java:180)
+	at chatserver.ClientHandler.run(ClientHandler.java:76)
+	at java.lang.Thread.run(Thread.java:745)
+
+Apr 14, 2025 1:00:27 PM chatserver.DatabaseManager initializeDatabase
+INFO: Database được khởi tạo thành công
+Apr 14, 2025 1:00:27 PM chatserver.DatabaseManager connect
+INFO: Kết nối đến database thành công!
+Apr 14, 2025 1:00:34 PM chatserver.DatabaseManager deleteDataByPort
+INFO: Đã xóa 59 tin nhắn từ port 12345
+Apr 14, 2025 1:00:34 PM chatserver.DatabaseManager deleteDataByPort
+INFO: Đã xóa 30 log kết nối từ port 12345
+Apr 14, 2025 1:00:34 PM chatserver.DatabaseManager deleteDataByPort
+INFO: Đã xóa 0 thông tin file từ port 12345
+Apr 14, 2025 1:00:34 PM chatserver.DatabaseManager deleteDataByPort
+INFO: Đã xóa toàn bộ dữ liệu từ port 12345
+Apr 14, 2025 1:00:59 PM chatserver.DatabaseManager deleteDataByPort
+INFO: Đã xóa 0 tin nhắn từ port 12345
+Apr 14, 2025 1:00:59 PM chatserver.DatabaseManager deleteDataByPort
+INFO: Đã xóa 0 log kết nối từ port 12345
+Apr 14, 2025 1:00:59 PM chatserver.DatabaseManager deleteDataByPort
+INFO: Đã xóa 0 thông tin file từ port 12345
+Apr 14, 2025 1:00:59 PM chatserver.DatabaseManager deleteDataByPort
+INFO: Đã xóa toàn bộ dữ liệu từ port 12345
+Apr 14, 2025 1:17:28 PM chatserver.DatabaseManager disconnect
+INFO: Đã đóng kết nối database!
+Apr 14, 2025 1:17:28 PM chatserver.ChatServer stop
+INFO: Server đã dừng trên port 12345
+Apr 14, 2025 1:17:33 PM chatserver.DatabaseManager initializeDatabase
+INFO: Database được khởi tạo thành công
+Apr 14, 2025 1:17:33 PM chatserver.DatabaseManager connect
+INFO: Kết nối đến database thành công!
+Apr 14, 2025 1:18:04 PM chatserver.DatabaseManager disconnect
+INFO: Đã đóng kết nối database!
+Apr 14, 2025 1:18:04 PM chatserver.ChatServer stop
+INFO: Server đã dừng trên port 12345
+Apr 14, 2025 1:21:44 PM chatserver.DatabaseManager initializeDatabase
+INFO: Database được khởi tạo thành công
+Apr 14, 2025 1:21:44 PM chatserver.DatabaseManager connect
+INFO: Kết nối đến database thành công!
+Apr 14, 2025 1:21:53 PM chatserver.DatabaseManager disconnect
+INFO: Đã đóng kết nối database!
+Apr 14, 2025 1:21:53 PM chatserver.ChatServer stop
+INFO: Server đã dừng trên port 12345
+Apr 15, 2025 9:07:54 PM chatserver.DatabaseManager initializeDatabase
+INFO: Database được khởi tạo thành công
+Apr 15, 2025 9:07:54 PM chatserver.DatabaseManager connect
+INFO: Kết nối đến database thành công!
+Apr 15, 2025 9:16:38 PM chatserver.DatabaseManager disconnect
+INFO: Đã đóng kết nối database!
+Apr 15, 2025 9:16:38 PM chatserver.ChatServer stop
+INFO: Server đã dừng trên port 12345
+Apr 15, 2025 9:24:53 PM chatserver.DatabaseManager initializeDatabase
+INFO: Database được khởi tạo thành công
+Apr 15, 2025 9:24:53 PM chatserver.DatabaseManager connect
+INFO: Kết nối đến database thành công!
+Apr 15, 2025 9:25:10 PM chatserver.DatabaseManager disconnect
+INFO: Đã đóng kết nối database!
+Apr 15, 2025 9:25:10 PM chatserver.ChatServer stop
+INFO: Server đã dừng trên port 12345
+Apr 15, 2025 9:25:20 PM chatserver.DatabaseManager initializeDatabase
+INFO: Database được khởi tạo thành công
+Apr 15, 2025 9:25:20 PM chatserver.DatabaseManager connect
+INFO: Kết nối đến database thành công!
+Apr 15, 2025 9:54:35 PM chatserver.DatabaseManager deleteDataByPort
+INFO: Đã xóa 30 tin nhắn từ port 12345
+Apr 15, 2025 9:54:35 PM chatserver.DatabaseManager deleteDataByPort
+INFO: Đã xóa 16 log kết nối từ port 12345
+Apr 15, 2025 9:54:35 PM chatserver.DatabaseManager deleteDataByPort
+INFO: Đã xóa 0 thông tin file từ port 12345
+Apr 15, 2025 9:54:35 PM chatserver.DatabaseManager deleteDataByPort
+INFO: Đã xóa toàn bộ dữ liệu từ port 12345
+Apr 15, 2025 9:55:05 PM chatserver.DatabaseManager disconnect
+INFO: Đã đóng kết nối database!
+Apr 15, 2025 9:55:05 PM chatserver.ChatServer stop
+INFO: Server đã dừng trên port 12345
+Apr 15, 2025 9:55:11 PM chatserver.DatabaseManager initializeDatabase
+INFO: Database được khởi tạo thành công
+Apr 15, 2025 9:55:11 PM chatserver.DatabaseManager connect
+INFO: Kết nối đến database thành công!
+Apr 15, 2025 9:57:09 PM chatserver.DatabaseManager disconnect
+INFO: Đã đóng kết nối database!
+Apr 15, 2025 9:57:09 PM chatserver.ChatServer stop
+INFO: Server đã dừng trên port 12345
+Apr 16, 2025 1:35:48 AM chatserver.DatabaseManager initializeDatabase
+INFO: Database được khởi tạo thành công
+Apr 16, 2025 1:35:48 AM chatserver.DatabaseManager connect
+INFO: Kết nối đến database thành công!
+Apr 16, 2025 1:49:49 AM chatserver.DatabaseManager disconnect
+INFO: Đã đóng kết nối database!
+Apr 16, 2025 1:49:49 AM chatserver.ChatServer stop
+INFO: Server đã dừng trên port 12345
+Apr 16, 2025 2:00:49 AM chatserver.DatabaseManager initializeDatabase
+INFO: Database được khởi tạo thành công
+Apr 16, 2025 2:00:49 AM chatserver.DatabaseManager connect
+INFO: Kết nối đến database thành công!
+Apr 16, 2025 2:00:55 AM chatserver.DatabaseManager deleteDataByPort
+INFO: Đã xóa 6 tin nhắn từ port 12345
+Apr 16, 2025 2:00:55 AM chatserver.DatabaseManager deleteDataByPort
+INFO: Đã xóa 4 log kết nối từ port 12345
+Apr 16, 2025 2:00:55 AM chatserver.DatabaseManager deleteDataByPort
+INFO: Đã xóa 0 thông tin file từ port 12345
+Apr 16, 2025 2:00:55 AM chatserver.DatabaseManager deleteDataByPort
+INFO: Đã xóa toàn bộ dữ liệu từ port 12345
+Apr 16, 2025 2:00:59 AM chatserver.DatabaseManager disconnect
+INFO: Đã đóng kết nối database!
+Apr 16, 2025 2:00:59 AM chatserver.ChatServer stop
+INFO: Server đã dừng trên port 12345
+Apr 16, 2025 2:01:01 AM chatserver.DatabaseManager initializeDatabase
+INFO: Database được khởi tạo thành công
+Apr 16, 2025 2:01:01 AM chatserver.DatabaseManager connect
+INFO: Kết nối đến database thành công!
+Apr 16, 2025 4:10:15 AM chatserver.ClientHandler run
+INFO: Client ngắt kết nối đột ngột: Terry từ server port 12345
+Apr 16, 2025 4:11:20 AM chatserver.DatabaseManager initializeDatabase
+INFO: Database được khởi tạo thành công
+Apr 16, 2025 4:11:20 AM chatserver.DatabaseManager connect
+INFO: Kết nối đến database thành công!
+Apr 16, 2025 4:11:33 AM chatserver.DatabaseManager deleteDataByPort
+INFO: Đã xóa 7866 tin nhắn từ port 12345
+Apr 16, 2025 4:11:33 AM chatserver.DatabaseManager deleteDataByPort
+INFO: Đã xóa 45 log kết nối từ port 12345
+Apr 16, 2025 4:11:33 AM chatserver.DatabaseManager deleteDataByPort
+INFO: Đã xóa 0 thông tin file từ port 12345
+Apr 16, 2025 4:11:34 AM chatserver.DatabaseManager deleteDataByPort
+INFO: Đã xóa toàn bộ dữ liệu từ port 12345
+Apr 16, 2025 4:38:21 AM chatserver.DatabaseManager initializeDatabase
+INFO: Database được khởi tạo thành công
+Apr 16, 2025 4:38:21 AM chatserver.DatabaseManager connect
+INFO: Kết nối đến database thành công!
+Apr 16, 2025 6:04:49 AM chatserver.ClientHandler run
+INFO: Client ngắt kết nối đột ngột: Terry từ server port 12345
+Apr 16, 2025 6:43:15 AM chatserver.DatabaseManager disconnect
+INFO: Đã đóng kết nối database!
+Apr 16, 2025 6:43:15 AM chatserver.ChatServer stop
+INFO: Server đã dừng trên port 12345
+Apr 16, 2025 9:51:05 AM chatserver.DatabaseManager initializeDatabase
+INFO: Database được khởi tạo thành công
+Apr 16, 2025 9:51:05 AM chatserver.DatabaseManager connect
+INFO: Kết nối đến database thành công!
+Apr 16, 2025 9:51:31 AM chatserver.DatabaseManager disconnect
+INFO: Đã đóng kết nối database!
+Apr 16, 2025 9:51:31 AM chatserver.ChatServer stop
+INFO: Server đã dừng trên port 12345
+Apr 16, 2025 9:51:37 AM chatserver.DatabaseManager initializeDatabase
+INFO: Database được khởi tạo thành công
+Apr 16, 2025 9:51:37 AM chatserver.DatabaseManager connect
+INFO: Kết nối đến database thành công!
+Apr 16, 2025 9:52:10 AM chatserver.ChatServer handleUserLogin
+INFO: User Thuong logged in successfully
+Apr 16, 2025 9:52:10 AM chatserver.ChatServer sendChatHistory
+INFO: Sending chat history to Thuong
+Apr 16, 2025 9:54:23 AM chatserver.ChatServer handleUserLogin
+INFO: User Thuong logged in successfully
+Apr 16, 2025 9:54:23 AM chatserver.ChatServer sendChatHistory
+INFO: Sending chat history to Thuong
+Apr 16, 2025 9:55:54 AM chatserver.ChatServer handleUserLogin
+INFO: User Thuong already logged in, notifying new client
+Apr 16, 2025 9:56:28 AM chatserver.DatabaseManager deleteDataByPort
+INFO: Đã xóa 20 tin nhắn từ port 12345
+Apr 16, 2025 9:56:28 AM chatserver.DatabaseManager deleteDataByPort
+INFO: Đã xóa 13 log kết nối từ port 12345
+Apr 16, 2025 9:56:28 AM chatserver.DatabaseManager deleteDataByPort
+INFO: Đã xóa 0 thông tin file từ port 12345
+Apr 16, 2025 9:56:28 AM chatserver.DatabaseManager deleteDataByPort
+INFO: Đã xóa 20 tin nhắn lịch sử từ port 12345
+Apr 16, 2025 9:56:28 AM chatserver.DatabaseManager deleteDataByPort
+INFO: Đã xóa toàn bộ dữ liệu từ port 12345
+Apr 16, 2025 9:56:32 AM chatserver.DatabaseManager disconnect
+INFO: Đã đóng kết nối database!
+Apr 16, 2025 9:56:32 AM chatserver.ChatServer stop
+INFO: Server đã dừng trên port 12345
+Apr 16, 2025 10:02:20 AM chatserver.DatabaseManager initializeDatabase
+INFO: Database được khởi tạo thành công
+Apr 16, 2025 10:02:20 AM chatserver.DatabaseManager connect
+INFO: Kết nối đến database thành công!
+Apr 16, 2025 10:02:24 AM chatserver.ChatServer handleUserLogin
+INFO: User Thuong logged in successfully
+Apr 16, 2025 10:02:24 AM chatserver.ChatServer sendChatHistory
+INFO: Sending chat history to Thuong
+Apr 16, 2025 10:03:09 AM chatserver.ChatServer handleUserLogin
+INFO: User Thuong logged in successfully
+Apr 16, 2025 10:03:09 AM chatserver.ChatServer sendChatHistory
+INFO: Sending chat history to Thuong
+Apr 16, 2025 10:03:22 AM chatserver.ChatServer handleUserLogin
+INFO: User Thuong logged in successfully
+Apr 16, 2025 10:03:22 AM chatserver.ChatServer sendChatHistory
+INFO: Sending chat history to Thuong
+Apr 16, 2025 10:04:18 AM chatserver.ChatServer handleUserLogin
+INFO: User Thuong already logged in, notifying new client
+Apr 16, 2025 10:05:55 AM chatserver.ChatServer handleUserLogin
+INFO: User Thuong logged in successfully
+Apr 16, 2025 10:05:56 AM chatserver.ChatServer sendChatHistory
+INFO: Sending chat history to Thuong
+Apr 16, 2025 10:09:40 AM chatserver.DatabaseManager disconnect
+INFO: Đã đóng kết nối database!
+Apr 16, 2025 10:09:40 AM chatserver.ChatServer stop
+INFO: Server đã dừng trên port 12345
+Apr 16, 2025 10:09:47 AM chatserver.DatabaseManager initializeDatabase
+INFO: Database được khởi tạo thành công
+Apr 16, 2025 10:09:47 AM chatserver.DatabaseManager connect
+INFO: Kết nối đến database thành công!
+Apr 16, 2025 10:09:59 AM chatserver.ChatServer handleUserLogin
+INFO: User Thuong logged in successfully
+Apr 16, 2025 10:09:59 AM chatserver.ChatServer sendChatHistory
+INFO: Sending chat history to Thuong
+Apr 16, 2025 10:16:23 AM chatserver.ChatServer handleUserLogin
+INFO: User Thuong already logged in, notifying new client
+Apr 16, 2025 10:16:36 AM chatserver.ChatServer handleUserLogin
+INFO: User Thuong logged in successfully
+Apr 16, 2025 10:16:36 AM chatserver.ChatServer sendChatHistory
+INFO: Sending chat history to Thuong
+Apr 16, 2025 10:16:46 AM chatserver.ChatServer handleUserLogin
+INFO: User Thuong logged in successfully
+Apr 16, 2025 10:16:46 AM chatserver.ChatServer sendChatHistory
+INFO: Sending chat history to Thuong
+Apr 16, 2025 10:20:56 AM chatserver.ChatServer handleUserLogin
+INFO: User Thuong logged in successfully
+Apr 16, 2025 10:22:10 AM chatserver.ChatServer handleUserLogin
+INFO: User Thuong logged in successfully
+Apr 16, 2025 10:22:10 AM chatserver.ChatServer sendChatHistory
+INFO: Sending chat history to Thuong
+Apr 16, 2025 10:24:00 AM chatserver.ChatServer handleUserLogin
+INFO: User Thuong already logged in, notifying new client
+Apr 16, 2025 10:24:54 AM chatserver.ChatServer handleUserLogin
+INFO: User Thuong logged in successfully
+Apr 16, 2025 10:26:11 AM chatserver.ChatServer handleUserLogin
+INFO: User Thuong logged in successfully
+Apr 16, 2025 10:45:51 AM chatserver.DatabaseManager disconnect
+INFO: Đã đóng kết nối database!
+Apr 16, 2025 10:45:51 AM chatserver.ChatServer stop
+INFO: Server đã dừng trên port 12345
+Apr 16, 2025 10:46:22 AM chatserver.DatabaseManager initializeDatabase
+INFO: Database được khởi tạo thành công
+Apr 16, 2025 10:46:22 AM chatserver.DatabaseManager connect
+INFO: Kết nối đến database thành công!
+Apr 16, 2025 10:46:29 AM chatserver.ChatServer handleUserLogin
+INFO: User Thuong logged in successfully
+Apr 16, 2025 10:46:29 AM chatserver.ChatServer sendChatHistory
+INFO: Sending chat history to Thuong
+Apr 16, 2025 10:46:42 AM chatserver.DatabaseManager disconnect
+INFO: Đã đóng kết nối database!
+Apr 16, 2025 10:46:42 AM chatserver.ChatServer stop
+INFO: Server đã dừng trên port 12345
+Apr 16, 2025 11:09:31 AM chatserver.DatabaseManager initializeDatabase
+INFO: Database được khởi tạo thành công
+Apr 16, 2025 11:09:31 AM chatserver.DatabaseManager connect
+INFO: Kết nối đến database thành công!
+Apr 16, 2025 11:09:37 AM chatserver.DatabaseManager deleteDataByPort
+INFO: Đã xóa 13 tin nhắn từ port 12345
+Apr 16, 2025 11:09:37 AM chatserver.DatabaseManager deleteDataByPort
+INFO: Đã xóa 25 log kết nối từ port 12345
+Apr 16, 2025 11:09:37 AM chatserver.DatabaseManager deleteDataByPort
+INFO: Đã xóa 0 thông tin file từ port 12345
+Apr 16, 2025 11:09:37 AM chatserver.DatabaseManager deleteDataByPort
+INFO: Đã xóa 13 tin nhắn lịch sử từ port 12345
+Apr 16, 2025 11:09:37 AM chatserver.DatabaseManager deleteDataByPort
+INFO: Đã xóa toàn bộ dữ liệu từ port 12345
+Apr 16, 2025 11:10:44 AM chatserver.ChatServer handleUserLogin
+INFO: User Thuong logged in successfully
+Apr 16, 2025 11:10:44 AM chatserver.ChatServer sendChatHistory
+INFO: Sending chat history to Thuong
+Apr 16, 2025 11:12:31 AM chatserver.ChatServer handleUserLogin
+INFO: User Viet logged in successfully
+Apr 16, 2025 3:09:03 PM chatserver.ChatServer handleUserLogin
+INFO: User Thuong already logged in, notifying new client
+Apr 16, 2025 3:09:41 PM chatserver.ChatServer handleUserLogin
+INFO: User Viet logged in successfully
+Apr 16, 2025 3:09:41 PM chatserver.ChatServer sendChatHistory
+INFO: Sending chat history to Viet
+Apr 16, 2025 3:22:07 PM chatserver.ChatServer handleUserLogin
+INFO: User Thuong logged in successfully
+Apr 16, 2025 3:22:07 PM chatserver.ChatServer sendChatHistory
+INFO: Sending chat history to Thuong
+Apr 16, 2025 3:22:07 PM chatserver.ClientHandler run
+WARNING: Lỗi kết nối cho Thuong
+java.net.SocketException: Software caused connection abort: recv failed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:170)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at chatserver.ClientHandler.run(ClientHandler.java:75)
+	at java.lang.Thread.run(Thread.java:745)
+
+Apr 16, 2025 3:22:34 PM chatserver.ChatServer handleUserLogin
+INFO: User Viet logged in successfully
+Apr 16, 2025 3:22:34 PM chatserver.ChatServer sendChatHistory
+INFO: Sending chat history to Viet
+Apr 16, 2025 3:22:34 PM chatserver.ClientHandler run
+WARNING: Lỗi kết nối cho Viet
+java.net.SocketException: Software caused connection abort: recv failed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:170)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at chatserver.ClientHandler.run(ClientHandler.java:75)
+	at java.lang.Thread.run(Thread.java:745)
+
+Apr 16, 2025 3:27:22 PM chatserver.DatabaseManager disconnect
+INFO: Đã đóng kết nối database!
+Apr 16, 2025 3:27:22 PM chatserver.ChatServer stop
+INFO: Server đã dừng trên port 12345
+Apr 16, 2025 3:27:23 PM chatserver.DatabaseManager initializeDatabase
+INFO: Database được khởi tạo thành công
+Apr 16, 2025 3:27:23 PM chatserver.DatabaseManager connect
+INFO: Kết nối đến database thành công!
+Apr 16, 2025 3:27:25 PM chatserver.DatabaseManager deleteDataByPort
+INFO: Đã xóa 3 tin nhắn từ port 12345
+Apr 16, 2025 3:27:25 PM chatserver.DatabaseManager deleteDataByPort
+INFO: Đã xóa 10 log kết nối từ port 12345
+Apr 16, 2025 3:27:25 PM chatserver.DatabaseManager deleteDataByPort
+INFO: Đã xóa 0 thông tin file từ port 12345
+Apr 16, 2025 3:27:25 PM chatserver.DatabaseManager deleteDataByPort
+INFO: Đã xóa 3 tin nhắn lịch sử từ port 12345
+Apr 16, 2025 3:27:25 PM chatserver.DatabaseManager deleteDataByPort
+INFO: Đã xóa toàn bộ dữ liệu từ port 12345
+Apr 16, 2025 3:27:30 PM chatserver.DatabaseManager deleteDataByPort
+INFO: Đã xóa 0 tin nhắn từ port 12345
+Apr 16, 2025 3:27:30 PM chatserver.DatabaseManager deleteDataByPort
+INFO: Đã xóa 0 log kết nối từ port 12345
+Apr 16, 2025 3:27:30 PM chatserver.DatabaseManager deleteDataByPort
+INFO: Đã xóa 0 thông tin file từ port 12345
+Apr 16, 2025 3:27:30 PM chatserver.DatabaseManager deleteDataByPort
+INFO: Đã xóa 0 tin nhắn lịch sử từ port 12345
+Apr 16, 2025 3:27:30 PM chatserver.DatabaseManager deleteDataByPort
+INFO: Đã xóa toàn bộ dữ liệu từ port 12345
+Apr 16, 2025 3:27:33 PM chatserver.DatabaseManager disconnect
+INFO: Đã đóng kết nối database!
+Apr 16, 2025 3:27:33 PM chatserver.ChatServer stop
+INFO: Server đã dừng trên port 12345
+Apr 16, 2025 3:27:34 PM chatserver.DatabaseManager initializeDatabase
+INFO: Database được khởi tạo thành công
+Apr 16, 2025 3:27:34 PM chatserver.DatabaseManager connect
+INFO: Kết nối đến database thành công!
+Apr 16, 2025 3:27:44 PM chatserver.ChatServer handleUserLogin
+INFO: User Thuong logged in successfully
+Apr 16, 2025 3:27:44 PM chatserver.ChatServer sendChatHistory
+INFO: Sending chat history to Thuong
+Apr 16, 2025 3:27:44 PM chatserver.ClientHandler run
+WARNING: Lỗi kết nối cho Thuong
+java.net.SocketException: Software caused connection abort: recv failed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:170)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at chatserver.ClientHandler.run(ClientHandler.java:75)
+	at java.lang.Thread.run(Thread.java:745)
+
+Apr 16, 2025 3:29:32 PM chatserver.ChatServer handleUserLogin
+INFO: User Thuong logged in successfully
+Apr 16, 2025 3:29:32 PM chatserver.ChatServer sendChatHistory
+INFO: Sending chat history to Thuong
+Apr 16, 2025 3:29:58 PM chatserver.DatabaseManager disconnect
+INFO: Đã đóng kết nối database!
+Apr 16, 2025 3:29:58 PM chatserver.ChatServer stop
+INFO: Server đã dừng trên port 12345
+Apr 16, 2025 7:00:37 PM chatserver.DatabaseManager initializeDatabase
+INFO: Database được khởi tạo thành công
+Apr 16, 2025 7:00:37 PM chatserver.DatabaseManager connect
+INFO: Kết nối đến database thành công!
+Apr 16, 2025 7:00:41 PM chatserver.ChatServer handleUserLogin
+INFO: User Thuong logged in successfully
+Apr 16, 2025 7:00:41 PM chatserver.ChatServer sendChatHistory
+INFO: Sending chat history to Thuong
+Apr 16, 2025 11:58:42 PM chatserver.ChatServer handleUserLogin
+INFO: User Thuong logged in successfully
+Apr 16, 2025 11:58:42 PM chatserver.ChatServer sendChatHistory
+INFO: Sending chat history to Thuong
+Apr 16, 2025 11:59:09 PM chatserver.ChatServer handleUserLogin
+INFO: User Viet logged in successfully
+Apr 16, 2025 11:59:09 PM chatserver.ChatServer sendChatHistory
+INFO: Sending chat history to Viet
+Apr 17, 2025 3:39:22 AM chatserver.DatabaseManager disconnect
+INFO: Đã đóng kết nối database!
+Apr 17, 2025 3:39:22 AM chatserver.ChatServer stop
+INFO: Server đã dừng trên port 12345
+Apr 17, 2025 5:02:16 AM chatserver.DatabaseManager initializeDatabase
+INFO: Database được khởi tạo thành công
+Apr 17, 2025 5:02:16 AM chatserver.DatabaseManager connect
+INFO: Kết nối đến database thành công!
+Apr 17, 2025 5:02:51 AM chatserver.DatabaseManager disconnect
+INFO: Đã đóng kết nối database!
+Apr 17, 2025 5:02:51 AM chatserver.ChatServer stop
+INFO: Server đã dừng trên port 12345
+Apr 17, 2025 7:01:48 AM chatserver.DatabaseManager initializeDatabase
+INFO: Database được khởi tạo thành công
+Apr 17, 2025 7:01:48 AM chatserver.DatabaseManager connect
+INFO: Kết nối đến database thành công!
+Apr 17, 2025 7:01:57 AM chatserver.DatabaseManager disconnect
+INFO: Đã đóng kết nối database!
+Apr 17, 2025 7:01:57 AM chatserver.ChatServer stop
+INFO: Server đã dừng trên port 12345
+Apr 17, 2025 7:02:04 AM chatserver.DatabaseManager initializeDatabase
+INFO: Database được khởi tạo thành công
+Apr 17, 2025 7:02:04 AM chatserver.DatabaseManager connect
+INFO: Kết nối đến database thành công!
+Apr 17, 2025 7:02:25 AM chatserver.ChatServer handleUserLogin
+INFO: User Thuong logged in successfully
+Apr 17, 2025 7:02:25 AM chatserver.ChatServer sendChatHistory
+INFO: Sending chat history to Thuong
+Apr 17, 2025 7:04:15 AM chatserver.DatabaseManager disconnect
+INFO: Đã đóng kết nối database!
+Apr 17, 2025 7:04:15 AM chatserver.ChatServer stop
+INFO: Server đã dừng trên port 12345

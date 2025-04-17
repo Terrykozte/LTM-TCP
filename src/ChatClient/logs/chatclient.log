@@ -1,0 +1,1450 @@
+Apr 16, 2025 6:43:42 AM chatclient.ChatClientGUI createTempDirectory
+INFO: Created temp directory: C:\Users\TERRYK~1\AppData\Local\Temp\\chatclient_1744760622293_1
+Apr 16, 2025 6:43:46 AM chatclient.ChatClient connect
+INFO: Connected to server: localhost:12345 as Terry
+Apr 16, 2025 6:45:56 AM chatclient.ChatClient sendMessage
+SEVERE: Error sending message
+java.security.InvalidKeyException: Illegal key size or default parameters
+	at javax.crypto.Cipher.checkCryptoPerm(Cipher.java:1026)
+	at javax.crypto.Cipher.implInit(Cipher.java:801)
+	at javax.crypto.Cipher.chooseProvider(Cipher.java:864)
+	at javax.crypto.Cipher.init(Cipher.java:1249)
+	at javax.crypto.Cipher.init(Cipher.java:1186)
+	at chatclient.ChatClient$SimpleCipher.encrypt(ChatClient.java:502)
+	at chatclient.ChatClient.sendMessage(ChatClient.java:112)
+	at chatclient.ChatClientGUI.sendMessage(ChatClientGUI.java:1638)
+	at chatclient.ChatClientGUI.lambda$createChatPanel$9(ChatClientGUI.java:1394)
+	at chatclient.ChatClientGUI$$Lambda$32/1727004999.actionPerformed(Unknown Source)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2346)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:289)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:289)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:289)
+	at java.awt.Component.processMouseEvent(Component.java:6525)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6290)
+	at java.awt.Container.processEvent(Container.java:2234)
+	at java.awt.Component.dispatchEventImpl(Component.java:4881)
+	at java.awt.Container.dispatchEventImpl(Container.java:2292)
+	at java.awt.Component.dispatchEvent(Component.java:4703)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4898)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4533)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4462)
+	at java.awt.Container.dispatchEventImpl(Container.java:2278)
+	at java.awt.Window.dispatchEventImpl(Window.java:2750)
+	at java.awt.Component.dispatchEvent(Component.java:4703)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+
+Apr 16, 2025 6:45:58 AM chatclient.ChatClient sendMessage
+SEVERE: Error sending message
+java.security.InvalidKeyException: Illegal key size or default parameters
+	at javax.crypto.Cipher.checkCryptoPerm(Cipher.java:1026)
+	at javax.crypto.Cipher.implInit(Cipher.java:801)
+	at javax.crypto.Cipher.chooseProvider(Cipher.java:864)
+	at javax.crypto.Cipher.init(Cipher.java:1249)
+	at javax.crypto.Cipher.init(Cipher.java:1186)
+	at chatclient.ChatClient$SimpleCipher.encrypt(ChatClient.java:502)
+	at chatclient.ChatClient.sendMessage(ChatClient.java:112)
+	at chatclient.ChatClientGUI.sendMessage(ChatClientGUI.java:1638)
+	at chatclient.ChatClientGUI.lambda$createChatPanel$9(ChatClientGUI.java:1394)
+	at chatclient.ChatClientGUI$$Lambda$32/1727004999.actionPerformed(Unknown Source)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2346)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:289)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:289)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:289)
+	at java.awt.Component.processMouseEvent(Component.java:6525)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6290)
+	at java.awt.Container.processEvent(Container.java:2234)
+	at java.awt.Component.dispatchEventImpl(Component.java:4881)
+	at java.awt.Container.dispatchEventImpl(Container.java:2292)
+	at java.awt.Component.dispatchEvent(Component.java:4703)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4898)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4533)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4462)
+	at java.awt.Container.dispatchEventImpl(Container.java:2278)
+	at java.awt.Window.dispatchEventImpl(Window.java:2750)
+	at java.awt.Component.dispatchEvent(Component.java:4703)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+
+Apr 16, 2025 6:46:04 AM chatclient.ChatClient sendMessage
+SEVERE: Error sending message
+java.security.InvalidKeyException: Illegal key size or default parameters
+	at javax.crypto.Cipher.checkCryptoPerm(Cipher.java:1026)
+	at javax.crypto.Cipher.implInit(Cipher.java:801)
+	at javax.crypto.Cipher.chooseProvider(Cipher.java:864)
+	at javax.crypto.Cipher.init(Cipher.java:1249)
+	at javax.crypto.Cipher.init(Cipher.java:1186)
+	at chatclient.ChatClient$SimpleCipher.encrypt(ChatClient.java:502)
+	at chatclient.ChatClient.sendMessage(ChatClient.java:112)
+	at chatclient.ChatClientGUI.sendMessage(ChatClientGUI.java:1638)
+	at chatclient.ChatClientGUI.lambda$createChatPanel$9(ChatClientGUI.java:1394)
+	at chatclient.ChatClientGUI$$Lambda$32/1727004999.actionPerformed(Unknown Source)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2346)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:289)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:289)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:289)
+	at java.awt.Component.processMouseEvent(Component.java:6525)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6290)
+	at java.awt.Container.processEvent(Container.java:2234)
+	at java.awt.Component.dispatchEventImpl(Component.java:4881)
+	at java.awt.Container.dispatchEventImpl(Container.java:2292)
+	at java.awt.Component.dispatchEvent(Component.java:4703)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4898)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4533)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4462)
+	at java.awt.Container.dispatchEventImpl(Container.java:2278)
+	at java.awt.Window.dispatchEventImpl(Window.java:2750)
+	at java.awt.Component.dispatchEvent(Component.java:4703)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+
+Apr 16, 2025 6:46:06 AM chatclient.ChatClient sendMessage
+SEVERE: Error sending message
+java.security.InvalidKeyException: Illegal key size or default parameters
+	at javax.crypto.Cipher.checkCryptoPerm(Cipher.java:1026)
+	at javax.crypto.Cipher.implInit(Cipher.java:801)
+	at javax.crypto.Cipher.chooseProvider(Cipher.java:864)
+	at javax.crypto.Cipher.init(Cipher.java:1249)
+	at javax.crypto.Cipher.init(Cipher.java:1186)
+	at chatclient.ChatClient$SimpleCipher.encrypt(ChatClient.java:502)
+	at chatclient.ChatClient.sendMessage(ChatClient.java:112)
+	at chatclient.ChatClientGUI.sendMessage(ChatClientGUI.java:1638)
+	at chatclient.ChatClientGUI.lambda$createChatPanel$9(ChatClientGUI.java:1394)
+	at chatclient.ChatClientGUI$$Lambda$32/1727004999.actionPerformed(Unknown Source)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2346)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:289)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:289)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:289)
+	at java.awt.Component.processMouseEvent(Component.java:6525)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6290)
+	at java.awt.Container.processEvent(Container.java:2234)
+	at java.awt.Component.dispatchEventImpl(Component.java:4881)
+	at java.awt.Container.dispatchEventImpl(Container.java:2292)
+	at java.awt.Component.dispatchEvent(Component.java:4703)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4898)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4533)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4462)
+	at java.awt.Container.dispatchEventImpl(Container.java:2278)
+	at java.awt.Window.dispatchEventImpl(Window.java:2750)
+	at java.awt.Component.dispatchEvent(Component.java:4703)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+
+Apr 16, 2025 6:46:08 AM chatclient.ChatClient sendMessage
+SEVERE: Error sending message
+java.security.InvalidKeyException: Illegal key size or default parameters
+	at javax.crypto.Cipher.checkCryptoPerm(Cipher.java:1026)
+	at javax.crypto.Cipher.implInit(Cipher.java:801)
+	at javax.crypto.Cipher.chooseProvider(Cipher.java:864)
+	at javax.crypto.Cipher.init(Cipher.java:1249)
+	at javax.crypto.Cipher.init(Cipher.java:1186)
+	at chatclient.ChatClient$SimpleCipher.encrypt(ChatClient.java:502)
+	at chatclient.ChatClient.sendMessage(ChatClient.java:112)
+	at chatclient.ChatClientGUI.sendMessage(ChatClientGUI.java:1638)
+	at chatclient.ChatClientGUI.lambda$createChatPanel$9(ChatClientGUI.java:1394)
+	at chatclient.ChatClientGUI$$Lambda$32/1727004999.actionPerformed(Unknown Source)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2346)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:289)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:289)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:289)
+	at java.awt.Component.processMouseEvent(Component.java:6525)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6290)
+	at java.awt.Container.processEvent(Container.java:2234)
+	at java.awt.Component.dispatchEventImpl(Component.java:4881)
+	at java.awt.Container.dispatchEventImpl(Container.java:2292)
+	at java.awt.Component.dispatchEvent(Component.java:4703)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4898)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4533)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4462)
+	at java.awt.Container.dispatchEventImpl(Container.java:2278)
+	at java.awt.Window.dispatchEventImpl(Window.java:2750)
+	at java.awt.Component.dispatchEvent(Component.java:4703)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+
+Apr 16, 2025 6:48:29 AM chatclient.ChatClient disconnect
+INFO: Disconnected from server
+Apr 16, 2025 7:13:06 AM chatclient.ChatClientGUI createTempDirectory
+INFO: Created temp directory: C:\Users\TERRYK~1\AppData\Local\Temp\\chatclient_1744762386419_1
+Apr 16, 2025 7:13:15 AM chatclient.ChatClient connect
+INFO: Connected to server: localhost:12345 as Terry
+Apr 16, 2025 7:13:16 AM chatclient.ChatClient sendMessage
+INFO: Sent special command: REQUEST_CHAT_HISTORY
+Apr 16, 2025 7:13:16 AM chatclient.ChatClient$MessageReader receiveAndDisplayChatHistory
+WARNING: Failed to decrypt historical message
+java.security.InvalidKeyException: Illegal key size or default parameters
+	at javax.crypto.Cipher.checkCryptoPerm(Cipher.java:1026)
+	at javax.crypto.Cipher.implInit(Cipher.java:801)
+	at javax.crypto.Cipher.chooseProvider(Cipher.java:864)
+	at javax.crypto.Cipher.init(Cipher.java:1249)
+	at javax.crypto.Cipher.init(Cipher.java:1186)
+	at chatclient.ChatClient$SimpleCipher.decrypt(ChatClient.java:553)
+	at chatclient.ChatClient$MessageReader.receiveAndDisplayChatHistory(ChatClient.java:403)
+	at chatclient.ChatClient$MessageReader.run(ChatClient.java:309)
+	at java.lang.Thread.run(Thread.java:745)
+
+Apr 16, 2025 7:13:16 AM chatclient.ChatClient$MessageReader receiveAndDisplayChatHistory
+WARNING: Failed to decrypt historical message
+java.security.InvalidKeyException: Illegal key size or default parameters
+	at javax.crypto.Cipher.checkCryptoPerm(Cipher.java:1026)
+	at javax.crypto.Cipher.implInit(Cipher.java:801)
+	at javax.crypto.Cipher.chooseProvider(Cipher.java:864)
+	at javax.crypto.Cipher.init(Cipher.java:1249)
+	at javax.crypto.Cipher.init(Cipher.java:1186)
+	at chatclient.ChatClient$SimpleCipher.decrypt(ChatClient.java:553)
+	at chatclient.ChatClient$MessageReader.receiveAndDisplayChatHistory(ChatClient.java:403)
+	at chatclient.ChatClient$MessageReader.run(ChatClient.java:309)
+	at java.lang.Thread.run(Thread.java:745)
+
+Apr 16, 2025 7:51:31 AM chatclient.ChatClient disconnect
+INFO: Disconnected from server
+Apr 16, 2025 7:51:34 AM chatclient.ChatClient connect
+INFO: Connected to server: localhost:12345 as Terry
+Apr 16, 2025 7:51:34 AM chatclient.ChatClient sendMessage
+INFO: Sent special command: REQUEST_CHAT_HISTORY
+Apr 16, 2025 7:51:34 AM chatclient.ChatClient$MessageReader receiveAndDisplayChatHistory
+WARNING: Failed to decrypt historical message
+java.security.InvalidKeyException: Illegal key size or default parameters
+	at javax.crypto.Cipher.checkCryptoPerm(Cipher.java:1026)
+	at javax.crypto.Cipher.implInit(Cipher.java:801)
+	at javax.crypto.Cipher.chooseProvider(Cipher.java:864)
+	at javax.crypto.Cipher.init(Cipher.java:1249)
+	at javax.crypto.Cipher.init(Cipher.java:1186)
+	at chatclient.ChatClient$SimpleCipher.decrypt(ChatClient.java:553)
+	at chatclient.ChatClient$MessageReader.receiveAndDisplayChatHistory(ChatClient.java:403)
+	at chatclient.ChatClient$MessageReader.run(ChatClient.java:309)
+	at java.lang.Thread.run(Thread.java:745)
+
+Apr 16, 2025 7:51:34 AM chatclient.ChatClient$MessageReader receiveAndDisplayChatHistory
+WARNING: Failed to decrypt historical message
+java.security.InvalidKeyException: Illegal key size or default parameters
+	at javax.crypto.Cipher.checkCryptoPerm(Cipher.java:1026)
+	at javax.crypto.Cipher.implInit(Cipher.java:801)
+	at javax.crypto.Cipher.chooseProvider(Cipher.java:864)
+	at javax.crypto.Cipher.init(Cipher.java:1249)
+	at javax.crypto.Cipher.init(Cipher.java:1186)
+	at chatclient.ChatClient$SimpleCipher.decrypt(ChatClient.java:553)
+	at chatclient.ChatClient$MessageReader.receiveAndDisplayChatHistory(ChatClient.java:403)
+	at chatclient.ChatClient$MessageReader.run(ChatClient.java:309)
+	at java.lang.Thread.run(Thread.java:745)
+
+Apr 16, 2025 7:51:43 AM chatclient.ChatClient sendMessage
+SEVERE: Error sending message
+java.security.InvalidKeyException: Illegal key size or default parameters
+	at javax.crypto.Cipher.checkCryptoPerm(Cipher.java:1026)
+	at javax.crypto.Cipher.implInit(Cipher.java:801)
+	at javax.crypto.Cipher.chooseProvider(Cipher.java:864)
+	at javax.crypto.Cipher.init(Cipher.java:1249)
+	at javax.crypto.Cipher.init(Cipher.java:1186)
+	at chatclient.ChatClient$SimpleCipher.encrypt(ChatClient.java:545)
+	at chatclient.ChatClient.sendMessage(ChatClient.java:114)
+	at chatclient.ChatClientGUI.sendMessage(ChatClientGUI.java:1650)
+	at chatclient.ChatClientGUI.access$1800(ChatClientGUI.java:24)
+	at chatclient.ChatClientGUI$10.keyPressed(ChatClientGUI.java:1347)
+	at java.awt.Component.processKeyEvent(Component.java:6483)
+	at javax.swing.JComponent.processKeyEvent(JComponent.java:2832)
+	at java.awt.Component.processEvent(Component.java:6302)
+	at java.awt.Container.processEvent(Container.java:2234)
+	at java.awt.Component.dispatchEventImpl(Component.java:4881)
+	at java.awt.Container.dispatchEventImpl(Container.java:2292)
+	at java.awt.Component.dispatchEvent(Component.java:4703)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1954)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:806)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1074)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:945)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:771)
+	at java.awt.Component.dispatchEventImpl(Component.java:4752)
+	at java.awt.Container.dispatchEventImpl(Container.java:2292)
+	at java.awt.Window.dispatchEventImpl(Window.java:2750)
+	at java.awt.Component.dispatchEvent(Component.java:4703)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+
+Apr 16, 2025 7:51:46 AM chatclient.ChatClient sendMessage
+SEVERE: Error sending message
+java.security.InvalidKeyException: Illegal key size or default parameters
+	at javax.crypto.Cipher.checkCryptoPerm(Cipher.java:1026)
+	at javax.crypto.Cipher.implInit(Cipher.java:801)
+	at javax.crypto.Cipher.chooseProvider(Cipher.java:864)
+	at javax.crypto.Cipher.init(Cipher.java:1249)
+	at javax.crypto.Cipher.init(Cipher.java:1186)
+	at chatclient.ChatClient$SimpleCipher.encrypt(ChatClient.java:545)
+	at chatclient.ChatClient.sendMessage(ChatClient.java:114)
+	at chatclient.ChatClientGUI.sendMessage(ChatClientGUI.java:1650)
+	at chatclient.ChatClientGUI.lambda$createChatPanel$9(ChatClientGUI.java:1397)
+	at chatclient.ChatClientGUI$$Lambda$32/867573094.actionPerformed(Unknown Source)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2346)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:289)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:289)
+	at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:289)
+	at java.awt.Component.processMouseEvent(Component.java:6525)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6290)
+	at java.awt.Container.processEvent(Container.java:2234)
+	at java.awt.Component.dispatchEventImpl(Component.java:4881)
+	at java.awt.Container.dispatchEventImpl(Container.java:2292)
+	at java.awt.Component.dispatchEvent(Component.java:4703)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4898)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4533)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4462)
+	at java.awt.Container.dispatchEventImpl(Container.java:2278)
+	at java.awt.Window.dispatchEventImpl(Window.java:2750)
+	at java.awt.Component.dispatchEvent(Component.java:4703)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+
+Apr 16, 2025 7:52:05 AM chatclient.ChatClient sendMessage
+SEVERE: Error sending message
+java.security.InvalidKeyException: Illegal key size or default parameters
+	at javax.crypto.Cipher.checkCryptoPerm(Cipher.java:1026)
+	at javax.crypto.Cipher.implInit(Cipher.java:801)
+	at javax.crypto.Cipher.chooseProvider(Cipher.java:864)
+	at javax.crypto.Cipher.init(Cipher.java:1249)
+	at javax.crypto.Cipher.init(Cipher.java:1186)
+	at chatclient.ChatClient$SimpleCipher.encrypt(ChatClient.java:545)
+	at chatclient.ChatClient.sendMessage(ChatClient.java:114)
+	at chatclient.ChatClientGUI.sendMessage(ChatClientGUI.java:1650)
+	at chatclient.ChatClientGUI.access$1800(ChatClientGUI.java:24)
+	at chatclient.ChatClientGUI$10.keyPressed(ChatClientGUI.java:1347)
+	at java.awt.Component.processKeyEvent(Component.java:6483)
+	at javax.swing.JComponent.processKeyEvent(JComponent.java:2832)
+	at java.awt.Component.processEvent(Component.java:6302)
+	at java.awt.Container.processEvent(Container.java:2234)
+	at java.awt.Component.dispatchEventImpl(Component.java:4881)
+	at java.awt.Container.dispatchEventImpl(Container.java:2292)
+	at java.awt.Component.dispatchEvent(Component.java:4703)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1954)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:806)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1074)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:945)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:771)
+	at java.awt.Component.dispatchEventImpl(Component.java:4752)
+	at java.awt.Container.dispatchEventImpl(Container.java:2292)
+	at java.awt.Window.dispatchEventImpl(Window.java:2750)
+	at java.awt.Component.dispatchEvent(Component.java:4703)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+
+Apr 16, 2025 7:52:06 AM chatclient.ChatClient sendMessage
+SEVERE: Error sending message
+java.security.InvalidKeyException: Illegal key size or default parameters
+	at javax.crypto.Cipher.checkCryptoPerm(Cipher.java:1026)
+	at javax.crypto.Cipher.implInit(Cipher.java:801)
+	at javax.crypto.Cipher.chooseProvider(Cipher.java:864)
+	at javax.crypto.Cipher.init(Cipher.java:1249)
+	at javax.crypto.Cipher.init(Cipher.java:1186)
+	at chatclient.ChatClient$SimpleCipher.encrypt(ChatClient.java:545)
+	at chatclient.ChatClient.sendMessage(ChatClient.java:114)
+	at chatclient.ChatClientGUI.sendMessage(ChatClientGUI.java:1650)
+	at chatclient.ChatClientGUI.access$1800(ChatClientGUI.java:24)
+	at chatclient.ChatClientGUI$10.keyPressed(ChatClientGUI.java:1347)
+	at java.awt.Component.processKeyEvent(Component.java:6483)
+	at javax.swing.JComponent.processKeyEvent(JComponent.java:2832)
+	at java.awt.Component.processEvent(Component.java:6302)
+	at java.awt.Container.processEvent(Container.java:2234)
+	at java.awt.Component.dispatchEventImpl(Component.java:4881)
+	at java.awt.Container.dispatchEventImpl(Container.java:2292)
+	at java.awt.Component.dispatchEvent(Component.java:4703)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1954)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:806)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1074)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:945)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:771)
+	at java.awt.Component.dispatchEventImpl(Component.java:4752)
+	at java.awt.Container.dispatchEventImpl(Container.java:2292)
+	at java.awt.Window.dispatchEventImpl(Window.java:2750)
+	at java.awt.Component.dispatchEvent(Component.java:4703)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+
+Apr 16, 2025 9:01:16 AM chatclient.ChatClient$MessageReader run
+WARNING: Failed to decrypt message from Thuong
+Apr 16, 2025 9:01:17 AM chatclient.ChatClient$MessageReader run
+WARNING: Failed to decrypt message from Thuong
+Apr 16, 2025 9:01:23 AM chatclient.ChatClient$MessageReader run
+WARNING: Failed to decrypt message from Thuong
+Apr 16, 2025 9:01:24 AM chatclient.ChatClient$MessageReader run
+WARNING: Failed to decrypt message from Thuong
+Apr 16, 2025 9:01:25 AM chatclient.ChatClient$MessageReader run
+WARNING: Failed to decrypt message from Thuong
+Apr 16, 2025 9:01:28 AM chatclient.ChatClient$MessageReader run
+WARNING: Failed to decrypt message from Thuong
+Apr 16, 2025 9:07:04 AM chatclient.ChatClient sendMessage
+SEVERE: Error sending message
+java.security.InvalidKeyException: Illegal key size or default parameters
+	at javax.crypto.Cipher.checkCryptoPerm(Cipher.java:1026)
+	at javax.crypto.Cipher.implInit(Cipher.java:801)
+	at javax.crypto.Cipher.chooseProvider(Cipher.java:864)
+	at javax.crypto.Cipher.init(Cipher.java:1249)
+	at javax.crypto.Cipher.init(Cipher.java:1186)
+	at chatclient.ChatClient$SimpleCipher.encrypt(ChatClient.java:545)
+	at chatclient.ChatClient.sendMessage(ChatClient.java:114)
+	at chatclient.ChatClientGUI.sendMessage(ChatClientGUI.java:1650)
+	at chatclient.ChatClientGUI.access$1800(ChatClientGUI.java:24)
+	at chatclient.ChatClientGUI$10.keyPressed(ChatClientGUI.java:1347)
+	at java.awt.Component.processKeyEvent(Component.java:6483)
+	at javax.swing.JComponent.processKeyEvent(JComponent.java:2832)
+	at java.awt.Component.processEvent(Component.java:6302)
+	at java.awt.Container.processEvent(Container.java:2234)
+	at java.awt.Component.dispatchEventImpl(Component.java:4881)
+	at java.awt.Container.dispatchEventImpl(Container.java:2292)
+	at java.awt.Component.dispatchEvent(Component.java:4703)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1954)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:806)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1074)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:945)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:771)
+	at java.awt.Component.dispatchEventImpl(Component.java:4752)
+	at java.awt.Container.dispatchEventImpl(Container.java:2292)
+	at java.awt.Window.dispatchEventImpl(Window.java:2750)
+	at java.awt.Component.dispatchEvent(Component.java:4703)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+
+Apr 16, 2025 9:07:07 AM chatclient.ChatClient disconnect
+INFO: Disconnected from server
+Apr 16, 2025 9:51:41 AM chatclient.LoginRegisterManager loadUsers
+INFO: Loaded 2 users from file
+Apr 16, 2025 9:51:41 AM chatclient.ChatClientGUI createTempDirectory
+INFO: Created temp directory: C:\Users\TERRYK~1\AppData\Local\Temp\\chatclient_1744771901246_1
+Apr 16, 2025 9:51:54 AM chatclient.LoginRegisterManager login
+WARNING: Login failed for user: Terry
+Apr 16, 2025 9:52:10 AM chatclient.LoginRegisterManager login
+INFO: Login successful for user: Thuong
+Apr 16, 2025 9:52:10 AM chatclient.ChatClient connect
+INFO: Connected to server: localhost:12345 as Thuong
+Apr 16, 2025 9:52:10 AM chatclient.ChatClient sendMessage
+INFO: Message sent: REQUEST_CHAT_HISTORY
+Apr 16, 2025 9:52:13 AM chatclient.ChatClient sendMessage
+INFO: Message sent: hi
+Apr 16, 2025 9:52:27 AM chatclient.ChatClient sendMessage
+INFO: Message sent: asdasd
+Apr 16, 2025 9:52:28 AM chatclient.ChatClient sendMessage
+INFO: Message sent: hi
+Apr 16, 2025 9:53:30 AM chatclient.ChatClient sendMessage
+INFO: Message sent: hsfsdf
+Apr 16, 2025 9:54:15 AM chatclient.ChatClient disconnect
+INFO: Disconnected from server
+Apr 16, 2025 9:55:45 AM chatclient.LoginRegisterManager loadUsers
+INFO: Loaded 2 users from file
+Apr 16, 2025 9:55:45 AM chatclient.ChatClientGUI createTempDirectory
+INFO: Created temp directory: C:\Users\TERRYK~1\AppData\Local\Temp\\chatclient_1744772145816_1
+Apr 16, 2025 9:55:54 AM chatclient.LoginRegisterManager login
+INFO: Login successful for user: Thuong
+Apr 16, 2025 9:55:54 AM chatclient.ChatClient connect
+INFO: Connected to server: localhost:12345 as Thuong
+Apr 16, 2025 9:55:54 AM chatclient.ChatClient sendMessage
+INFO: Message sent: REQUEST_CHAT_HISTORY
+Apr 16, 2025 9:55:56 AM chatclient.ChatClient forceLogin
+INFO: Force login sent to server
+Apr 16, 2025 9:55:56 AM chatclient.ChatClient sendMessage
+INFO: Message sent: REQUEST_CHAT_HISTORY
+Apr 16, 2025 9:55:59 AM chatclient.ChatClient sendMessage
+INFO: Message sent: helo
+Apr 16, 2025 9:56:04 AM chatclient.ChatClient disconnect
+INFO: Disconnected from server
+Apr 16, 2025 10:04:06 AM chatclient.LoginRegisterManager loadUsers
+INFO: Loaded 2 users from file
+Apr 16, 2025 10:04:06 AM chatclient.ChatClientGUI createTempDirectory
+INFO: Created temp directory: C:\Users\TERRYK~1\AppData\Local\Temp\\chatclient_1744772646165_1
+Apr 16, 2025 10:04:18 AM chatclient.LoginRegisterManager login
+INFO: Login successful for user: Thuong
+Apr 16, 2025 10:04:18 AM chatclient.ChatClient connect
+INFO: Connected to server: localhost:12345 as Thuong
+Apr 16, 2025 10:04:18 AM chatclient.ChatClient sendMessage
+INFO: Sent special command: REQUEST_CHAT_HISTORY
+Apr 16, 2025 10:04:20 AM chatclient.ChatClient forceLogin
+INFO: Force login sent to server
+Apr 16, 2025 10:04:20 AM chatclient.ChatClient sendMessage
+INFO: Sent special command: REQUEST_CHAT_HISTORY
+Apr 16, 2025 10:04:21 AM chatclient.ChatClient sendMessage
+INFO: Message sent: he
+Apr 16, 2025 10:05:35 AM chatclient.ChatClient disconnect
+INFO: Disconnected from server
+Apr 16, 2025 10:05:48 AM chatclient.LoginRegisterManager loadUsers
+INFO: Loaded 2 users from file
+Apr 16, 2025 10:05:48 AM chatclient.ChatClientGUI createTempDirectory
+INFO: Created temp directory: C:\Users\TERRYK~1\AppData\Local\Temp\\chatclient_1744772748623_1
+Apr 16, 2025 10:05:55 AM chatclient.LoginRegisterManager login
+INFO: Login successful for user: Thuong
+Apr 16, 2025 10:05:55 AM chatclient.ChatClient connect
+INFO: Connected to server: localhost:12345 as Thuong
+Apr 16, 2025 10:05:56 AM chatclient.ChatClient sendMessage
+INFO: Sent special command: REQUEST_CHAT_HISTORY
+Apr 16, 2025 10:05:57 AM chatclient.ChatClient sendMessage
+INFO: Message sent: asd
+Apr 16, 2025 10:05:59 AM chatclient.ChatClient sendMessage
+INFO: Message sent: helo
+Apr 16, 2025 10:09:36 AM chatclient.ChatClient disconnect
+INFO: Disconnected from server
+Apr 16, 2025 10:16:46 AM chatclient.LoginRegisterManager login
+INFO: Login successful for user: Thuong
+Apr 16, 2025 10:16:46 AM chatclient.ChatClient connect
+INFO: Connected to server: localhost:12345 as Thuong
+Apr 16, 2025 10:16:46 AM chatclient.ChatClient sendMessage
+INFO: Sent special command: REQUEST_CHAT_HISTORY
+Apr 16, 2025 10:16:48 AM chatclient.ChatClient sendMessage
+INFO: Message sent: asd
+Apr 16, 2025 10:16:49 AM chatclient.ChatClient sendMessage
+INFO: Message sent: \
+Apr 16, 2025 10:16:49 AM chatclient.ChatClient sendMessage
+INFO: Message sent: a
+Apr 16, 2025 10:16:50 AM chatclient.ChatClient sendMessage
+INFO: Message sent: a
+Apr 16, 2025 10:16:50 AM chatclient.ChatClient sendMessage
+INFO: Message sent: a
+Apr 16, 2025 10:16:50 AM chatclient.ChatClient sendMessage
+INFO: Message sent: a
+Apr 16, 2025 10:16:53 AM chatclient.ChatClient disconnect
+INFO: Disconnected from server
+Apr 16, 2025 10:20:49 AM chatclient.LoginRegisterManager loadUsers
+INFO: Loaded 2 users from file
+Apr 16, 2025 10:20:49 AM chatclient.ChatClientGUI createTempDirectory
+INFO: Created temp directory: C:\Users\TERRYK~1\AppData\Local\Temp\\chatclient_1744773649053_1
+Apr 16, 2025 10:20:56 AM chatclient.LoginRegisterManager login
+INFO: Login successful for user: Thuong
+Apr 16, 2025 10:20:56 AM chatclient.ChatClient connect
+INFO: Connected to server: localhost:12345 as Thuong
+Apr 16, 2025 10:20:57 AM chatclient.ChatClient sendMessage
+SEVERE: Error sending message
+java.security.InvalidKeyException: Illegal key size or default parameters
+	at javax.crypto.Cipher.checkCryptoPerm(Cipher.java:1026)
+	at javax.crypto.Cipher.implInit(Cipher.java:801)
+	at javax.crypto.Cipher.chooseProvider(Cipher.java:864)
+	at javax.crypto.Cipher.init(Cipher.java:1249)
+	at javax.crypto.Cipher.init(Cipher.java:1186)
+	at chatclient.ChatClient$SimpleCipher.encrypt(ChatClient.java:545)
+	at chatclient.ChatClient.sendMessage(ChatClient.java:114)
+	at chatclient.ChatClientGUI.sendMessage(ChatClientGUI.java:1638)
+	at chatclient.ChatClientGUI.access$1700(ChatClientGUI.java:24)
+	at chatclient.ChatClientGUI$10.keyPressed(ChatClientGUI.java:1344)
+	at java.awt.Component.processKeyEvent(Component.java:6483)
+	at javax.swing.JComponent.processKeyEvent(JComponent.java:2832)
+	at java.awt.Component.processEvent(Component.java:6302)
+	at java.awt.Container.processEvent(Container.java:2234)
+	at java.awt.Component.dispatchEventImpl(Component.java:4881)
+	at java.awt.Container.dispatchEventImpl(Container.java:2292)
+	at java.awt.Component.dispatchEvent(Component.java:4703)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1954)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:806)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1074)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:945)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:771)
+	at java.awt.Component.dispatchEventImpl(Component.java:4752)
+	at java.awt.Container.dispatchEventImpl(Container.java:2292)
+	at java.awt.Window.dispatchEventImpl(Window.java:2750)
+	at java.awt.Component.dispatchEvent(Component.java:4703)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+
+Apr 16, 2025 10:21:18 AM chatclient.ChatClient sendMessage
+SEVERE: Error sending message
+java.security.InvalidKeyException: Illegal key size or default parameters
+	at javax.crypto.Cipher.checkCryptoPerm(Cipher.java:1026)
+	at javax.crypto.Cipher.implInit(Cipher.java:801)
+	at javax.crypto.Cipher.chooseProvider(Cipher.java:864)
+	at javax.crypto.Cipher.init(Cipher.java:1249)
+	at javax.crypto.Cipher.init(Cipher.java:1186)
+	at chatclient.ChatClient$SimpleCipher.encrypt(ChatClient.java:545)
+	at chatclient.ChatClient.sendMessage(ChatClient.java:114)
+	at chatclient.ChatClientGUI.sendMessage(ChatClientGUI.java:1638)
+	at chatclient.ChatClientGUI.access$1700(ChatClientGUI.java:24)
+	at chatclient.ChatClientGUI$10.keyPressed(ChatClientGUI.java:1344)
+	at java.awt.Component.processKeyEvent(Component.java:6483)
+	at javax.swing.JComponent.processKeyEvent(JComponent.java:2832)
+	at java.awt.Component.processEvent(Component.java:6302)
+	at java.awt.Container.processEvent(Container.java:2234)
+	at java.awt.Component.dispatchEventImpl(Component.java:4881)
+	at java.awt.Container.dispatchEventImpl(Container.java:2292)
+	at java.awt.Component.dispatchEvent(Component.java:4703)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1954)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:806)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1074)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:945)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:771)
+	at java.awt.Component.dispatchEventImpl(Component.java:4752)
+	at java.awt.Container.dispatchEventImpl(Container.java:2292)
+	at java.awt.Window.dispatchEventImpl(Window.java:2750)
+	at java.awt.Component.dispatchEvent(Component.java:4703)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+
+Apr 16, 2025 10:21:43 AM chatclient.ChatClient disconnect
+INFO: Disconnected from server
+Apr 16, 2025 10:22:03 AM chatclient.LoginRegisterManager loadUsers
+INFO: Loaded 2 users from file
+Apr 16, 2025 10:22:03 AM chatclient.ChatClientGUI createTempDirectory
+INFO: Created temp directory: C:\Users\TERRYK~1\AppData\Local\Temp\\chatclient_1744773723762_1
+Apr 16, 2025 10:22:10 AM chatclient.LoginRegisterManager login
+INFO: Login successful for user: Thuong
+Apr 16, 2025 10:22:10 AM chatclient.ChatClient connect
+INFO: Connected to server: localhost:12345 as Thuong
+Apr 16, 2025 10:22:10 AM chatclient.ChatClient sendMessage
+INFO: Sent special command: REQUEST_CHAT_HISTORY
+Apr 16, 2025 10:22:15 AM chatclient.ChatClient sendMessage
+SEVERE: Error sending message
+java.security.InvalidKeyException: Illegal key size or default parameters
+	at javax.crypto.Cipher.checkCryptoPerm(Cipher.java:1026)
+	at javax.crypto.Cipher.implInit(Cipher.java:801)
+	at javax.crypto.Cipher.chooseProvider(Cipher.java:864)
+	at javax.crypto.Cipher.init(Cipher.java:1249)
+	at javax.crypto.Cipher.init(Cipher.java:1186)
+	at chatclient.ChatClient$SimpleCipher.encrypt(ChatClient.java:545)
+	at chatclient.ChatClient.sendMessage(ChatClient.java:114)
+	at chatclient.ChatClientGUI.sendMessage(ChatClientGUI.java:1650)
+	at chatclient.ChatClientGUI.access$1800(ChatClientGUI.java:24)
+	at chatclient.ChatClientGUI$10.keyPressed(ChatClientGUI.java:1347)
+	at java.awt.Component.processKeyEvent(Component.java:6483)
+	at javax.swing.JComponent.processKeyEvent(JComponent.java:2832)
+	at java.awt.Component.processEvent(Component.java:6302)
+	at java.awt.Container.processEvent(Container.java:2234)
+	at java.awt.Component.dispatchEventImpl(Component.java:4881)
+	at java.awt.Container.dispatchEventImpl(Container.java:2292)
+	at java.awt.Component.dispatchEvent(Component.java:4703)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1954)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:806)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1074)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:945)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:771)
+	at java.awt.Component.dispatchEventImpl(Component.java:4752)
+	at java.awt.Container.dispatchEventImpl(Container.java:2292)
+	at java.awt.Window.dispatchEventImpl(Window.java:2750)
+	at java.awt.Component.dispatchEvent(Component.java:4703)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+
+Apr 16, 2025 10:24:09 AM chatclient.ChatClient disconnect
+INFO: Disconnected from server
+Apr 16, 2025 10:24:40 AM chatclient.LoginRegisterManager loadUsers
+INFO: Loaded 2 users from file
+Apr 16, 2025 10:24:54 AM chatclient.LoginRegisterManager login
+INFO: Login successful for user: Thuong
+Apr 16, 2025 10:24:54 AM chatclient.ChatClient connect
+INFO: Connected to server: localhost:12345 as Thuong
+Apr 16, 2025 10:24:57 AM chatclient.ChatClient sendMessage
+SEVERE: Error sending message
+java.security.InvalidKeyException: Illegal key size or default parameters
+	at javax.crypto.Cipher.checkCryptoPerm(Cipher.java:1026)
+	at javax.crypto.Cipher.implInit(Cipher.java:801)
+	at javax.crypto.Cipher.chooseProvider(Cipher.java:864)
+	at javax.crypto.Cipher.init(Cipher.java:1249)
+	at javax.crypto.Cipher.init(Cipher.java:1186)
+	at chatclient.ChatClient$SimpleCipher.encrypt(ChatClient.java:545)
+	at chatclient.ChatClient.sendMessage(ChatClient.java:114)
+	at chatclient.ChatClientGUI.sendMessage(ChatClientGUI.java:1615)
+	at chatclient.ChatClientGUI.access$1700(ChatClientGUI.java:21)
+	at chatclient.ChatClientGUI$10.keyPressed(ChatClientGUI.java:1321)
+	at java.awt.Component.processKeyEvent(Component.java:6483)
+	at javax.swing.JComponent.processKeyEvent(JComponent.java:2832)
+	at java.awt.Component.processEvent(Component.java:6302)
+	at java.awt.Container.processEvent(Container.java:2234)
+	at java.awt.Component.dispatchEventImpl(Component.java:4881)
+	at java.awt.Container.dispatchEventImpl(Container.java:2292)
+	at java.awt.Component.dispatchEvent(Component.java:4703)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1954)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:806)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1074)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:945)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:771)
+	at java.awt.Component.dispatchEventImpl(Component.java:4752)
+	at java.awt.Container.dispatchEventImpl(Container.java:2292)
+	at java.awt.Window.dispatchEventImpl(Window.java:2750)
+	at java.awt.Component.dispatchEvent(Component.java:4703)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+
+Apr 16, 2025 10:25:59 AM chatclient.ChatClient disconnect
+INFO: Disconnected from server
+Apr 16, 2025 10:26:03 AM chatclient.LoginRegisterManager loadUsers
+INFO: Loaded 2 users from file
+Apr 16, 2025 10:26:03 AM chatclient.ChatClientGUI createTempDirectory
+INFO: Created temp directory: C:\Users\TERRYK~1\AppData\Local\Temp\\chatclient_1744773963794_1
+Apr 16, 2025 10:26:11 AM chatclient.LoginRegisterManager login
+INFO: Login successful for user: Thuong
+Apr 16, 2025 10:26:11 AM chatclient.ChatClient connect
+INFO: Connected to server: localhost:12345 as Thuong
+Apr 16, 2025 10:26:13 AM chatclient.ChatClient sendMessage
+SEVERE: Error sending message
+java.security.InvalidKeyException: Illegal key size or default parameters
+	at javax.crypto.Cipher.checkCryptoPerm(Cipher.java:1026)
+	at javax.crypto.Cipher.implInit(Cipher.java:801)
+	at javax.crypto.Cipher.chooseProvider(Cipher.java:864)
+	at javax.crypto.Cipher.init(Cipher.java:1249)
+	at javax.crypto.Cipher.init(Cipher.java:1186)
+	at chatclient.ChatClient$SimpleCipher.encrypt(ChatClient.java:545)
+	at chatclient.ChatClient.sendMessage(ChatClient.java:114)
+	at chatclient.ChatClientGUI.sendMessage(ChatClientGUI.java:1638)
+	at chatclient.ChatClientGUI.access$1700(ChatClientGUI.java:24)
+	at chatclient.ChatClientGUI$10.keyPressed(ChatClientGUI.java:1344)
+	at java.awt.Component.processKeyEvent(Component.java:6483)
+	at javax.swing.JComponent.processKeyEvent(JComponent.java:2832)
+	at java.awt.Component.processEvent(Component.java:6302)
+	at java.awt.Container.processEvent(Container.java:2234)
+	at java.awt.Component.dispatchEventImpl(Component.java:4881)
+	at java.awt.Container.dispatchEventImpl(Container.java:2292)
+	at java.awt.Component.dispatchEvent(Component.java:4703)
+	at java.awt.KeyboardFocusManager.redispatchEvent(KeyboardFocusManager.java:1954)
+	at java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(DefaultKeyboardFocusManager.java:806)
+	at java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(DefaultKeyboardFocusManager.java:1074)
+	at java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(DefaultKeyboardFocusManager.java:945)
+	at java.awt.DefaultKeyboardFocusManager.dispatchEvent(DefaultKeyboardFocusManager.java:771)
+	at java.awt.Component.dispatchEventImpl(Component.java:4752)
+	at java.awt.Container.dispatchEventImpl(Container.java:2292)
+	at java.awt.Window.dispatchEventImpl(Window.java:2750)
+	at java.awt.Component.dispatchEvent(Component.java:4703)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+
+Apr 16, 2025 10:28:08 AM chatclient.ChatClient disconnect
+INFO: Disconnected from server
+Apr 16, 2025 10:45:55 AM chatclient.LoginRegisterManager loadUsers
+INFO: Loaded 2 users from file
+Apr 16, 2025 10:45:55 AM chatclient.ChatClientGUI createTempDirectory
+INFO: Created temp directory: C:\Users\TERRYK~1\AppData\Local\Temp\\chatclient_1744775155533_1
+Apr 16, 2025 10:46:06 AM chatclient.LoginRegisterManager login
+WARNING: Login attempt with non-existent username: Thương
+Apr 16, 2025 10:46:16 AM chatclient.LoginRegisterManager login
+INFO: Login successful for user: Thuong
+Apr 16, 2025 10:46:19 AM chatclient.ChatClient connect
+SEVERE: Could not connect to server
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at chatclient.ChatClient.connect(ChatClient.java:77)
+	at chatclient.ChatClientGUI$4.doInBackground(ChatClientGUI.java:850)
+	at chatclient.ChatClientGUI$4.doInBackground(ChatClientGUI.java:847)
+	at javax.swing.SwingWorker$1.call(SwingWorker.java:295)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at javax.swing.SwingWorker.run(SwingWorker.java:334)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+Apr 16, 2025 10:46:29 AM chatclient.LoginRegisterManager login
+INFO: Login successful for user: Thuong
+Apr 16, 2025 10:46:29 AM chatclient.ChatClient connect
+INFO: Connected to server: localhost:12345 as Thuong
+Apr 16, 2025 10:46:29 AM chatclient.ChatClient sendMessage
+INFO: Message sent: REQUEST_CHAT_HISTORY
+Apr 16, 2025 10:46:31 AM chatclient.ChatClient sendMessage
+INFO: Message sent: asd
+Apr 16, 2025 11:10:34 AM chatclient.LoginRegisterManager loadUsers
+INFO: Loaded 2 users from file
+Apr 16, 2025 11:10:34 AM chatclient.ChatClientGUI createTempDirectory
+INFO: Created temp directory: C:\Users\TERRYK~1\AppData\Local\Temp\\chatclient_1744776634136_1
+Apr 16, 2025 11:10:43 AM chatclient.LoginRegisterManager login
+INFO: Login successful for user: Thuong
+Apr 16, 2025 11:10:44 AM chatclient.ChatClient connect
+INFO: Connected to server: localhost:12345 as Thuong
+Apr 16, 2025 11:10:44 AM chatclient.ChatClient sendMessage
+INFO: Message sent: REQUEST_CHAT_HISTORY
+Apr 16, 2025 11:10:46 AM chatclient.ChatClient sendMessage
+INFO: Message sent: heelo
+Apr 16, 2025 11:12:44 AM chatclient.ChatClient sendMessage
+INFO: Message sent: asd
+Apr 16, 2025 3:09:22 PM chatclient.ChatClient disconnect
+INFO: Disconnected from server
+Apr 16, 2025 3:09:36 PM chatclient.LoginRegisterManager loadUsers
+INFO: Loaded 3 users from file
+Apr 16, 2025 3:09:36 PM chatclient.ChatClientGUI createTempDirectory
+INFO: Created temp directory: C:\Users\TERRYK~1\AppData\Local\Temp\\chatclient_1744790976152_1
+Apr 16, 2025 3:09:41 PM chatclient.LoginRegisterManager login
+INFO: Login successful for user: Viet
+Apr 16, 2025 3:09:41 PM chatclient.ChatClient connect
+INFO: Connected to server: localhost:12345 as Viet
+Apr 16, 2025 3:09:41 PM chatclient.ChatClient sendMessage
+INFO: Message sent: REQUEST_CHAT_HISTORY
+Apr 16, 2025 3:09:44 PM chatclient.ChatClient sendMessage
+INFO: Message sent: Viet: hello
+Apr 16, 2025 3:16:05 PM chatclient.ChatClient disconnect
+INFO: Disconnected from server
+Apr 16, 2025 3:21:02 PM chatclient.LoginRegisterManager loadUsers
+INFO: Loaded 3 users from file
+Apr 16, 2025 3:21:02 PM chatclient.ChatClientGUI createTempDirectory
+INFO: Created temp directory: C:\Users\TERRYK~1\AppData\Local\Temp\\chatclient_1744791662958_1
+Apr 16, 2025 3:21:56 PM chatclient.LoginRegisterManager loadUsers
+INFO: Loaded 3 users from file
+Apr 16, 2025 3:21:56 PM chatclient.ChatClientGUI createTempDirectory
+INFO: Created temp directory: C:\Users\TERRYK~1\AppData\Local\Temp\\chatclient_1744791716015_1
+Apr 16, 2025 3:22:07 PM chatclient.LoginRegisterManager login
+INFO: Login successful for user: Thuong
+Apr 16, 2025 3:22:07 PM chatclient.ChatClient requestOnlineUsers
+INFO: Requested online users list
+Apr 16, 2025 3:22:07 PM chatclient.ChatClient connect
+INFO: Connected to server: localhost:12345 as Thuong
+Apr 16, 2025 3:22:07 PM chatclient.ChatClient sendMessage
+INFO: Message sent: REQUEST_CHAT_HISTORY
+Apr 16, 2025 3:27:38 PM chatclient.LoginRegisterManager loadUsers
+INFO: Loaded 3 users from file
+Apr 16, 2025 3:27:38 PM chatclient.ChatClientGUI createTempDirectory
+INFO: Created temp directory: C:\Users\TERRYK~1\AppData\Local\Temp\\chatclient_1744792058422_1
+Apr 16, 2025 3:27:44 PM chatclient.LoginRegisterManager login
+INFO: Login successful for user: Thuong
+Apr 16, 2025 3:27:44 PM chatclient.ChatClient requestOnlineUsers
+INFO: Requested online users list
+Apr 16, 2025 3:27:44 PM chatclient.ChatClient connect
+INFO: Connected to server: localhost:12345 as Thuong
+Apr 16, 2025 3:27:44 PM chatclient.ChatClient sendMessage
+INFO: Message sent: REQUEST_CHAT_HISTORY
+Apr 16, 2025 3:29:32 PM chatclient.LoginRegisterManager login
+INFO: Login successful for user: Thuong
+Apr 16, 2025 3:29:32 PM chatclient.ChatClient requestOnlineUsers
+INFO: Requested online users list
+Apr 16, 2025 3:29:32 PM chatclient.ChatClient connect
+INFO: Connected to server: localhost:12345 as Thuong
+Apr 16, 2025 3:29:32 PM chatclient.ChatClient sendMessage
+INFO: Message sent: REQUEST_CHAT_HISTORY
+Apr 16, 2025 3:50:49 PM chatclient.LoginRegisterManager loadUsers
+INFO: Loaded 3 users from file
+Apr 16, 2025 3:50:49 PM chatclient.ChatClientGUI createTempDirectory
+INFO: Created temp directory: C:\Users\TERRYK~1\AppData\Local\Temp\\chatclient_1744793449542_1
+Apr 16, 2025 4:49:29 PM chatclient.LoginRegisterManager loadUsers
+INFO: Loaded 3 users from file
+Apr 16, 2025 4:49:29 PM chatclient.ChatClientGUI createTempDirectory
+INFO: Created temp directory: C:\Users\TERRYK~1\AppData\Local\Temp\\chatclient_1744796969547_1
+Apr 16, 2025 7:00:19 PM chatclient.LoginRegisterManager loadUsers
+INFO: Loaded 3 users from file
+Apr 16, 2025 7:00:19 PM chatclient.ChatClientGUI createTempDirectory
+INFO: Created temp directory: C:\Users\TERRYK~1\AppData\Local\Temp\\chatclient_1744804819938_1
+Apr 16, 2025 7:00:28 PM chatclient.LoginRegisterManager login
+INFO: Login successful for user: Thuong
+Apr 16, 2025 7:00:30 PM chatclient.ChatClient connect
+SEVERE: Could not connect to server
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at chatclient.ChatClient.connect(ChatClient.java:78)
+	at chatclient.ChatClientGUI$4.doInBackground(ChatClientGUI.java:848)
+	at chatclient.ChatClientGUI$4.doInBackground(ChatClientGUI.java:845)
+	at javax.swing.SwingWorker$1.call(SwingWorker.java:295)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at javax.swing.SwingWorker.run(SwingWorker.java:334)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+Apr 16, 2025 7:00:41 PM chatclient.LoginRegisterManager login
+INFO: Login successful for user: Thuong
+Apr 16, 2025 7:00:41 PM chatclient.ChatClient requestOnlineUsers
+INFO: Requested online users list
+Apr 16, 2025 7:00:41 PM chatclient.ChatClient connect
+INFO: Connected to server: localhost:12345 as Thuong
+Apr 16, 2025 7:00:41 PM chatclient.ChatClient sendMessage
+INFO: Message sent: REQUEST_CHAT_HISTORY
+Apr 16, 2025 7:00:41 PM chatclient.ChatClient$MessageReader receiveAndDisplayChatHistory
+INFO: Received chat history with 0 messages
+Apr 16, 2025 7:00:45 PM chatclient.ChatClient sendMessage
+INFO: Message sent: Thuong: helo
+Apr 16, 2025 7:00:53 PM chatclient.ChatClient sendMessage
+INFO: Message sent: Thuong: asdasd
+Apr 16, 2025 7:00:54 PM chatclient.ChatClient sendMessage
+INFO: Message sent: Thuong: asd
+Apr 16, 2025 7:00:54 PM chatclient.ChatClient sendMessage
+INFO: Message sent: Thuong: a
+Apr 16, 2025 7:00:55 PM chatclient.ChatClient sendMessage
+INFO: Message sent: Thuong: a
+Apr 16, 2025 7:05:30 PM chatclient.FileTransferHandler selectFile
+INFO: Selected file: D:\Ảnh\PickTuresOfTerry\AP\IMG_7980.PNG
+Apr 16, 2025 7:05:30 PM chatclient.ChatClient sendFile
+INFO: Added file to transfer queue: IMG_7980.PNG
+Apr 16, 2025 7:05:31 PM chatclient.ChatClient$FileTransferProcessor run
+INFO: Sent file header: FILE_HEADER:IMG_7980.PNG:1464749:image
+Apr 16, 2025 9:11:41 PM chatclient.ChatClient disconnect
+INFO: Disconnected from server
+Apr 16, 2025 9:11:41 PM chatclient.ChatClient$FileTransferProcessor run
+SEVERE: Error initiating file transfer
+java.net.SocketException: socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:170)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at chatclient.ChatClient$FileTransferProcessor.run(ChatClient.java:202)
+	at java.lang.Thread.run(Thread.java:745)
+
+Apr 16, 2025 11:58:33 PM chatclient.LoginRegisterManager loadUsers
+INFO: Loaded 3 users from file
+Apr 16, 2025 11:58:33 PM chatclient.ChatClientGUI createTempDirectory
+INFO: Created temp directory: C:\Users\TERRYK~1\AppData\Local\Temp\\chatclient_1744822713918_1
+Apr 16, 2025 11:58:42 PM chatclient.LoginRegisterManager login
+INFO: Login successful for user: Thuong
+Apr 16, 2025 11:58:42 PM chatclient.ChatClient requestOnlineUsers
+INFO: Requested online users list
+Apr 16, 2025 11:58:42 PM chatclient.ChatClient connect
+INFO: Connected to server: localhost:12345 as Thuong
+Apr 16, 2025 11:58:42 PM chatclient.ChatClient sendMessage
+INFO: Message sent: REQUEST_CHAT_HISTORY
+Apr 16, 2025 11:58:42 PM chatclient.ChatClient$MessageReader receiveAndDisplayChatHistory
+INFO: Received chat history with 5 messages
+Apr 16, 2025 11:58:46 PM chatclient.ChatClient sendMessage
+INFO: Message sent: Thuong: helo
+Apr 16, 2025 11:58:50 PM chatclient.ChatClient sendMessage
+INFO: Message sent: Thuong: asdsadasd
+Apr 16, 2025 11:58:51 PM chatclient.ChatClient sendMessage
+INFO: Message sent: Thuong: aa
+Apr 16, 2025 11:58:51 PM chatclient.ChatClient sendMessage
+INFO: Message sent: Thuong: aa
+Apr 16, 2025 11:58:52 PM chatclient.ChatClient sendMessage
+INFO: Message sent: Thuong: aa
+Apr 16, 2025 11:58:52 PM chatclient.ChatClient sendMessage
+INFO: Message sent: Thuong: a
+Apr 16, 2025 11:58:52 PM chatclient.ChatClient sendMessage
+INFO: Message sent: Thuong: a
+Apr 17, 2025 12:04:08 AM chatclient.FileTransferHandler selectFile
+INFO: Selected file: D:\Ảnh\PickTuresOfTerry\AP\IMG_0062.HEIC
+Apr 17, 2025 12:04:08 AM chatclient.ChatClient sendFile
+INFO: Added file to transfer queue: IMG_0062.HEIC
+Apr 17, 2025 12:04:09 AM chatclient.ChatClient$FileTransferProcessor run
+INFO: Sent file header: FILE_HEADER:IMG_0062.HEIC:967810:other
+Apr 17, 2025 12:04:22 AM chatclient.ChatClient disconnect
+INFO: Disconnected from server
+Apr 17, 2025 12:04:22 AM chatclient.ChatClient$FileTransferProcessor run
+SEVERE: Error initiating file transfer
+java.net.SocketException: socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:170)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at chatclient.ChatClient$FileTransferProcessor.run(ChatClient.java:202)
+	at java.lang.Thread.run(Thread.java:745)
+
+Apr 17, 2025 5:34:05 AM chatclient.LoginRegisterManager loadUsers
+INFO: Loaded 3 users from file
+Apr 17, 2025 5:34:05 AM chatclient.ChatClientGUI createTempDirectory
+INFO: Created temp directory: C:\Users\TERRYK~1\AppData\Local\Temp\\chatclient_1744842845837_1
+Apr 17, 2025 5:34:22 AM chatclient.LoginRegisterManager login
+INFO: Login successful for user: Thuong
+Apr 17, 2025 5:34:22 AM chatclient.ChatClient requestOnlineUsers
+INFO: Requested online users list
+Apr 17, 2025 5:34:22 AM chatclient.ChatClient connect
+INFO: Connected to server: localhost:12345 as Thuong
+Apr 17, 2025 5:34:22 AM chatclient.ChatClient sendMessage
+INFO: Message sent: REQUEST_CHAT_HISTORY
+Apr 17, 2025 5:34:22 AM chatclient.ChatClient$MessageReader receiveAndDisplayChatHistory
+INFO: Received chat history with 14 messages
+Apr 17, 2025 5:34:37 AM chatclient.ChatClient sendMessage
+INFO: Message sent: Thuong: tôi chưa kết thua
+Apr 17, 2025 5:34:39 AM chatclient.ChatClient sendMessage
+INFO: Message sent: Thuong: asddddddddddddddddddddd
+Apr 17, 2025 5:34:43 AM chatclient.ChatClient sendMessage
+INFO: Message sent: Thuong: asddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+Apr 17, 2025 5:34:52 AM chatclient.ChatClient sendMessage
+INFO: Message sent: Thuong: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+Apr 17, 2025 5:35:12 AM chatclient.FileTransferHandler selectFile
+INFO: Selected file: D:\Ảnh\PickTuresOfTerry\AP\IMG_6846.HEIC
+Apr 17, 2025 5:35:12 AM chatclient.ChatClient sendFile
+INFO: Added file to transfer queue: IMG_6846.HEIC
+Apr 17, 2025 5:35:12 AM chatclient.ChatClient$FileTransferProcessor run
+INFO: Sent file header: FILE_HEADER:IMG_6846.HEIC:254434:other:248.5 KB
+Apr 17, 2025 5:35:17 AM chatclient.ChatClient disconnect
+INFO: Disconnected from server
+Apr 17, 2025 5:35:17 AM chatclient.ChatClient$FileTransferProcessor run
+SEVERE: Error initiating file transfer
+java.net.SocketException: socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:170)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at chatclient.ChatClient$FileTransferProcessor.run(ChatClient.java:231)
+	at java.lang.Thread.run(Thread.java:745)
+
+Apr 17, 2025 5:37:54 AM chatclient.LoginRegisterManager loadUsers
+INFO: Loaded 3 users from file
+Apr 17, 2025 5:37:54 AM chatclient.ChatClientGUI createTempDirectory
+INFO: Created temp directory: C:\Users\TERRYK~1\AppData\Local\Temp\\chatclient_1744843074351_1
+Apr 17, 2025 5:38:03 AM chatclient.LoginRegisterManager login
+INFO: Login successful for user: Thuong
+Apr 17, 2025 5:38:03 AM chatclient.ChatClient requestOnlineUsers
+INFO: Requested online users list
+Apr 17, 2025 5:38:03 AM chatclient.ChatClient connect
+INFO: Connected to server: localhost:12345 as Thuong
+Apr 17, 2025 5:38:03 AM chatclient.ChatClient sendMessage
+INFO: Message sent: REQUEST_CHAT_HISTORY
+Apr 17, 2025 5:38:03 AM chatclient.ChatClient$MessageReader receiveAndDisplayChatHistory
+INFO: Received chat history with 18 messages
+Apr 17, 2025 5:38:11 AM chatclient.ChatClient sendMessage
+INFO: Message sent: Thuong: asdasdas
+Apr 17, 2025 5:39:45 AM chatclient.ChatClient disconnect
+INFO: Disconnected from server
+Apr 17, 2025 5:39:46 AM chatclient.LoginRegisterManager login
+INFO: Login successful for user: Thuong
+Apr 17, 2025 5:39:46 AM chatclient.ChatClient requestOnlineUsers
+INFO: Requested online users list
+Apr 17, 2025 5:39:46 AM chatclient.ChatClient connect
+INFO: Connected to server: localhost:12345 as Thuong
+Apr 17, 2025 5:39:46 AM chatclient.ChatClient sendMessage
+INFO: Message sent: REQUEST_CHAT_HISTORY
+Apr 17, 2025 5:39:46 AM chatclient.ChatClient$MessageReader receiveAndDisplayChatHistory
+INFO: Received chat history with 19 messages
+Apr 17, 2025 5:39:55 AM chatclient.ChatClient sendMessage
+INFO: Message sent: Thuong: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+Apr 17, 2025 5:42:07 AM chatclient.FileTransferHandler selectFile
+INFO: Selected file: D:\Ảnh\PickTuresOfTerry\AP\BFEY1978.JPG
+Apr 17, 2025 5:42:07 AM chatclient.ChatClient sendFile
+INFO: Added file to transfer queue: BFEY1978.JPG
+Apr 17, 2025 5:42:07 AM chatclient.ChatClient$FileTransferProcessor run
+INFO: Sent file header: FILE_HEADER:BFEY1978.JPG:72793:image:71.1 KB
+Apr 17, 2025 5:46:26 AM chatclient.ChatClient disconnect
+INFO: Disconnected from server
+Apr 17, 2025 5:46:26 AM chatclient.ChatClient$FileTransferProcessor run
+SEVERE: Error initiating file transfer
+java.net.SocketException: socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:170)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at chatclient.ChatClient$FileTransferProcessor.run(ChatClient.java:231)
+	at java.lang.Thread.run(Thread.java:745)
+
+Apr 17, 2025 5:51:49 AM chatclient.LoginRegisterManager loadUsers
+INFO: Loaded 3 users from file
+Apr 17, 2025 5:51:49 AM chatclient.ChatClientGUI createTempDirectory
+INFO: Created temp directory: C:\Users\TERRYK~1\AppData\Local\Temp\\chatclient_1744843909734_1
+Apr 17, 2025 5:51:55 AM chatclient.LoginRegisterManager login
+INFO: Login successful for user: Thuong
+Apr 17, 2025 5:51:55 AM chatclient.ChatClient requestOnlineUsers
+INFO: Requested online users list
+Apr 17, 2025 5:51:55 AM chatclient.ChatClient connect
+INFO: Connected to server: localhost:12345 as Thuong
+Apr 17, 2025 5:51:55 AM chatclient.ChatClient sendMessage
+INFO: Message sent: REQUEST_CHAT_HISTORY
+Apr 17, 2025 5:51:55 AM chatclient.ChatClient$MessageReader receiveAndDisplayChatHistory
+INFO: Received chat history with 0 messages
+Apr 17, 2025 5:53:05 AM chatclient.ChatClient disconnect
+INFO: Disconnected from server
+Apr 17, 2025 5:53:05 AM chatclient.LoginRegisterManager login
+INFO: Login successful for user: Thuong
+Apr 17, 2025 5:53:05 AM chatclient.ChatClient requestOnlineUsers
+INFO: Requested online users list
+Apr 17, 2025 5:53:05 AM chatclient.ChatClient connect
+INFO: Connected to server: localhost:12345 as Thuong
+Apr 17, 2025 5:53:05 AM chatclient.ChatClient sendMessage
+INFO: Message sent: REQUEST_CHAT_HISTORY
+Apr 17, 2025 5:53:05 AM chatclient.ChatClient$MessageReader receiveAndDisplayChatHistory
+INFO: Received chat history with 0 messages
+Apr 17, 2025 5:53:10 AM chatclient.ChatClient disconnect
+INFO: Disconnected from server
+Apr 17, 2025 5:53:12 AM chatclient.LoginRegisterManager loadUsers
+INFO: Loaded 3 users from file
+Apr 17, 2025 5:53:12 AM chatclient.ChatClientGUI createTempDirectory
+INFO: Created temp directory: C:\Users\TERRYK~1\AppData\Local\Temp\\chatclient_1744843992464_1
+Apr 17, 2025 5:53:17 AM chatclient.LoginRegisterManager login
+INFO: Login successful for user: Thuong
+Apr 17, 2025 5:53:17 AM chatclient.ChatClient requestOnlineUsers
+INFO: Requested online users list
+Apr 17, 2025 5:53:17 AM chatclient.ChatClient connect
+INFO: Connected to server: localhost:12345 as Thuong
+Apr 17, 2025 5:53:17 AM chatclient.ChatClient sendMessage
+INFO: Message sent: REQUEST_CHAT_HISTORY
+Apr 17, 2025 5:53:17 AM chatclient.ChatClient$MessageReader receiveAndDisplayChatHistory
+INFO: Received chat history with 0 messages
+Apr 17, 2025 5:53:26 AM chatclient.ChatClient disconnect
+INFO: Disconnected from server
+Apr 17, 2025 6:00:48 AM chatclient.LoginRegisterManager loadUsers
+INFO: Loaded 3 users from file
+Apr 17, 2025 6:00:48 AM chatclient.ChatClientGUI createTempDirectory
+INFO: Created temp directory: C:\Users\TERRYK~1\AppData\Local\Temp\\chatclient_1744844448091_1
+Apr 17, 2025 6:01:49 AM chatclient.LoginRegisterManager loadUsers
+INFO: Loaded 3 users from file
+Apr 17, 2025 6:01:49 AM chatclient.ChatClientGUI createTempDirectory
+INFO: Created temp directory: C:\Users\TERRYK~1\AppData\Local\Temp\\chatclient_1744844509685_1
+Apr 17, 2025 6:12:47 AM chatclient.LoginRegisterManager loadUsers
+INFO: Loaded 3 users from file
+Apr 17, 2025 6:12:47 AM chatclient.ChatClientGUI createTempDirectory
+INFO: Created temp directory: C:\Users\TERRYK~1\AppData\Local\Temp\\chatclient_1744845167360_1
+Apr 17, 2025 6:12:52 AM chatclient.LoginRegisterManager login
+INFO: Login successful for user: Thuong
+Apr 17, 2025 6:12:52 AM chatclient.ChatClient requestOnlineUsers
+INFO: Requested online users list
+Apr 17, 2025 6:12:52 AM chatclient.ChatClient connect
+INFO: Connected to server: localhost:12345 as Thuong
+Apr 17, 2025 6:12:52 AM chatclient.ChatClient sendMessage
+INFO: Message sent: REQUEST_CHAT_HISTORY
+Apr 17, 2025 6:12:52 AM chatclient.ChatClient$MessageReader receiveAndDisplayChatHistory
+INFO: Received chat history with 0 messages
+Apr 17, 2025 6:12:58 AM chatclient.FileTransferHandler selectFile
+INFO: Selected file: C:\Users\Terrykote\Downloads\Lab8.pdf
+Apr 17, 2025 6:12:58 AM chatclient.ChatClient sendFile
+INFO: Added file to transfer queue: Lab8.pdf
+Apr 17, 2025 6:12:58 AM chatclient.ChatClient$FileTransferProcessor run
+INFO: Sent file header: FILE_HEADER:Lab8.pdf:383982:document:375.0 KB
+Apr 17, 2025 6:13:09 AM chatclient.ChatClient sendMessage
+INFO: Message sent: sdasd
+Apr 17, 2025 6:13:10 AM chatclient.ChatClient sendMessage
+INFO: Message sent: asdsad
+Apr 17, 2025 6:13:13 AM chatclient.ChatClient disconnect
+INFO: Disconnected from server
+Apr 17, 2025 6:13:13 AM chatclient.ChatClient$FileTransferProcessor run
+SEVERE: Error initiating file transfer
+java.net.SocketException: socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:170)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at chatclient.ChatClient$FileTransferProcessor.run(ChatClient.java:231)
+	at java.lang.Thread.run(Thread.java:745)
+
+Apr 17, 2025 7:02:12 AM chatclient.LoginRegisterManager loadUsers
+INFO: Loaded 3 users from file
+Apr 17, 2025 7:02:12 AM chatclient.ChatClientGUI createTempDirectory
+INFO: Created temp directory: C:\Users\TERRYK~1\AppData\Local\Temp\\chatclient_1744848132656_1
+Apr 17, 2025 7:02:25 AM chatclient.LoginRegisterManager login
+INFO: Login successful for user: Thuong
+Apr 17, 2025 7:02:25 AM chatclient.ChatClient requestOnlineUsers
+INFO: Requested online users list
+Apr 17, 2025 7:02:25 AM chatclient.ChatClient connect
+INFO: Connected to server: localhost:12345 as Thuong
+Apr 17, 2025 7:02:25 AM chatclient.ChatClient sendMessage
+INFO: Message sent: REQUEST_CHAT_HISTORY
+Apr 17, 2025 7:02:25 AM chatclient.ChatClient$MessageReader receiveAndDisplayChatHistory
+INFO: Received chat history with 0 messages
+Apr 17, 2025 7:02:29 AM chatclient.ChatClient sendMessage
+INFO: Message sent: Thuong: asdsadas
+Apr 17, 2025 7:02:29 AM chatclient.ChatClient sendMessage
+INFO: Message sent: Thuong: asd
+Apr 17, 2025 7:02:42 AM chatclient.FileTransferHandler selectFile
+INFO: Selected file: C:\Users\Terrykote\OneDrive\Documents\test.docx
+Apr 17, 2025 7:02:42 AM chatclient.ChatClient sendFile
+INFO: Added file to transfer queue: test.docx
+Apr 17, 2025 7:02:42 AM chatclient.ChatClient$FileTransferProcessor run
+INFO: Sent file header: FILE_HEADER:test.docx:13503:document:13.2 KB
+Apr 17, 2025 7:03:05 AM chatclient.ChatClient disconnect
+INFO: Disconnected from server
+Apr 17, 2025 7:03:05 AM chatclient.ChatClient$FileTransferProcessor run
+SEVERE: Error initiating file transfer
+java.net.SocketException: socket closed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:170)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at chatclient.ChatClient$FileTransferProcessor.run(ChatClient.java:231)
+	at java.lang.Thread.run(Thread.java:745)
+

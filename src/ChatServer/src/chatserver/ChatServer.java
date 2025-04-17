@@ -5,18 +5,19 @@ import java.net.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.*;
 
 public class ChatServer {
     private ServerSocket serverSocket;
-    private final List<ClientHandler> clients = new ArrayList<>();
+    final List<ClientHandler> clients = new ArrayList<>();
     private final DatabaseManager dbManager;
     final ChatServerGUI gui;
     private boolean running = false;
     private int serverPort = 0;
-    private int totalClients = 0;
     private static final Logger logger = Logger.getLogger(ChatServer.class.getName());
     private final VigenereCipher cipher;
+    private Map<String, ClientHandler> userClientMap = new ConcurrentHashMap<>();
 
     public ChatServer(ChatServerGUI gui) {
         this.gui = gui;
@@ -38,29 +39,20 @@ public class ChatServer {
     
     public boolean start(int port) {
         try {
-            // Kết nối đến cơ sở dữ liệu
             if (!dbManager.connect()) {
                 gui.logMessage("Không thể kết nối đến cơ sở dữ liệu!");
                 return false;
             }
             
-            // Khởi tạo socket server
             serverSocket = new ServerSocket(port);
             serverPort = port;
             running = true;
             
-            // Đọc thông tin từ cơ sở dữ liệu và hiển thị
-            loadDatabaseInfo();
-            
-            // Reset client counters khi server khởi động
             synchronized (clients) {
                 clients.clear();
                 gui.updateClientCount(0);
             }
-            totalClients = 0;
-            gui.updateTotalClients(0);
             
-            // Bắt đầu thread chấp nhận kết nối
             new Thread(new ConnectionAcceptor()).start();
             
             return true;
@@ -71,57 +63,126 @@ public class ChatServer {
         }
     }
     
-    private void loadDatabaseInfo() {
-        try {
-            int totalMessages = dbManager.getMessagesCountByPort(serverPort);
-            int totalUsers = dbManager.getUsersCountByPort(serverPort);
-            
-            gui.logMessage("Thông tin cơ sở dữ liệu cho port " + serverPort + ":");
-            gui.logMessage("- Tổng số tin nhắn: " + totalMessages);
-            gui.logMessage("- Tổng số người dùng đã kết nối: " + totalUsers);
-            
-            // Hiển thị 10 tin nhắn gần nhất cho port này
-            ResultSet recentMessages = dbManager.getRecentMessages(10, serverPort);
-            if (recentMessages != null) {
-                boolean hasMessages = false;
-                gui.logMessage("Tin nhắn gần đây trên port " + serverPort + ":");
-                
-                int count = 0;
-                while (recentMessages.next() && count < 10) {
-                    hasMessages = true;
-                    String username = recentMessages.getString("username");
-                    String message = recentMessages.getString("message");
-                    String timestamp = recentMessages.getString("timestamp");
-                    gui.logMessage("[" + timestamp + "] " + username + ": " + message);
-                    count++;
+    // Kiểm tra và xử lý khi một người dùng đăng nhập
+    public boolean handleUserLogin(String username, ClientHandler newClient) {
+        ClientHandler existingClient = userClientMap.get(username);
+
+        if (existingClient != null && existingClient.isConnected()) {
+            // Người dùng đã đăng nhập ở một client khác
+            newClient.sendMessage("ACCOUNT_ALREADY_LOGGED_IN:" + username);
+            logger.info("User " + username + " already logged in, notifying new client");
+            return false;
+        }
+
+        // Đăng ký client mới cho username này
+        userClientMap.put(username, newClient);
+
+        // Gửi danh sách người dùng cho tất cả client
+        sendUserList(newClient);
+
+        // Broadcast thông báo người dùng mới tham gia
+        broadcastMessage(username + " đã tham gia chat!", newClient);
+
+        logger.info("User " + username + " logged in successfully");
+        return true;
+    }
+
+    public void sendUserList(ClientHandler newClient) {
+        List<String> userList = new ArrayList<>();
+        
+        synchronized (clients) {
+            for (ClientHandler client : clients) {
+                if (client.isConnected() && (newClient == null || !client.getUsername().equals(newClient.getUsername()))) {
+                    userList.add(client.getUsername());
                 }
-                
-                if (!hasMessages) {
-                    gui.logMessage("Chưa có tin nhắn nào trên port này.");
-                }
-                
-                recentMessages.close();
             }
-        } catch (SQLException ex) {
-            logger.log(Level.WARNING, "Không thể đọc thông tin từ cơ sở dữ liệu", ex);
+        }
+        
+        // Nếu newClient không null, gửi danh sách người dùng cho client mới
+        if (newClient != null && !userList.isEmpty()) {
+            StringBuilder userListMsg = new StringBuilder("USER_LIST:");
+            for (String username : userList) {
+                userListMsg.append(username).append(",");
+            }
+            newClient.sendMessage(userListMsg.toString());
+        }
+        
+        // Thông báo cho các client khác biết có người dùng mới kết nối hoặc người dùng đã rời đi
+        if (newClient != null) {
+            synchronized (clients) {
+                for (ClientHandler client : clients) {
+                    if (client.isConnected() && !client.equals(newClient)) {
+                        client.sendMessage("USER_CONNECTED:" + newClient.getUsername());
+                    }
+                }
+            }
+        } else {
+            // Cập nhật danh sách người dùng khi có người rời đi
+            StringBuilder userListMsg = new StringBuilder("USER_LIST:");
+            for (String username : userList) {
+                userListMsg.append(username).append(",");
+            }
+            
+            synchronized (clients) {
+                for (ClientHandler client : clients) {
+                    if (client.isConnected()) {
+                        client.sendMessage(userListMsg.toString());
+                    }
+                }
+            }
+        }
+    }
+    
+    // Phương thức gửi lịch sử chat cho client
+    public void sendChatHistory(String username, ClientHandler client) {
+        try {
+            // Lấy các tin nhắn gần đây từ cơ sở dữ liệu
+            ResultSet history = dbManager.getMessagesWithEncryption(50, serverPort);
+            
+            client.sendMessage("CHAT_HISTORY_BEGIN");
+            logger.info("Sending chat history to " + username);
+            
+            // Xử lý dữ liệu từ ResultSet
+            while (history != null && history.next()) {
+                String timestamp = history.getString("timestamp");
+                String author = history.getString("username");
+                String message;
+                
+                if (author.equals(username)) {
+                    // Tin nhắn của chính người dùng này - sử dụng tin nhắn gốc
+                    message = history.getString("original_message");
+                } else {
+                    // Tin nhắn từ người khác - gửi phiên bản đã mã hóa để client giải mã
+                    message = history.getString("encrypted_message");
+                }
+                
+                // Format: TIMESTAMP|AUTHOR|MESSAGE
+                client.sendMessage(timestamp + "|" + author + "|" + message);
+            }
+            
+            client.sendMessage("CHAT_HISTORY_END");
+            
+            if (history != null) {
+                history.close();
+            }
+        } catch (SQLException e) {
+            logger.log(Level.SEVERE, "Error sending chat history", e);
+            client.sendMessage("Error loading chat history");
         }
     }
     
     public void stop() {
-        // Gửi thông báo đến tất cả client trước khi dừng
         synchronized (clients) {
             for (ClientHandler client : clients) {
                 client.sendMessage("SERVER_SHUTDOWN");
             }
             
-            // Đợi một chút để đảm bảo thông điệp được gửi
             try {
                 Thread.sleep(300);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
             
-            // Đóng tất cả kết nối client
             for (ClientHandler client : clients) {
                 client.close();
             }
@@ -129,14 +190,12 @@ public class ChatServer {
             gui.updateClientCount(0);
         }
         
-        // Dừng server
         running = false;
         try {
             if (serverSocket != null && !serverSocket.isClosed()) {
                 serverSocket.close();
             }
             
-            // Đóng kết nối đến cơ sở dữ liệu
             dbManager.disconnect();
             logger.info("Server đã dừng trên port " + serverPort);
         } catch (IOException ex) {
@@ -148,71 +207,105 @@ public class ChatServer {
         if (dbManager != null) {
             dbManager.deleteDataByPort(serverPort);
             gui.logMessage("Đã xóa toàn bộ dữ liệu trên port " + serverPort);
-            
-            // Cập nhật lại thông tin sau khi xóa
-            loadDatabaseInfo();
         }
     }
     
     public void broadcastMessage(String message, ClientHandler sender) {
-        synchronized (clients) {
-            for (ClientHandler client : clients) {
-                client.sendMessage(message);
+        // Kiểm tra xem đây có phải tin nhắn hệ thống (không cần mã hóa)
+        boolean isSystemMessage = message.contains(" đã tham gia chat!") || 
+                                 message.contains(" đã rời chat!") ||
+                                 !message.contains(": ");
+        
+        if (isSystemMessage) {
+            // Tin nhắn hệ thống - gửi nguyên trạng
+            synchronized (clients) {
+                for (ClientHandler client : clients) {
+                    client.sendMessage(message);
+                }
             }
-        }
-        
-        // Phân tích tin nhắn
-        String originalMessage = "";
-        String encryptedContent = "";
-        
-        if (message.startsWith(sender.getUsername() + ": ")) {
-            encryptedContent = message.substring((sender.getUsername() + ": ").length());
-            String decryptedContent = cipher.decrypt(encryptedContent);
-            originalMessage = sender.getUsername() + ": " + decryptedContent;
-        } else {
-            originalMessage = message;
-        }
-        
-        // Lưu tin nhắn gốc vào database với port
-        String hostname = sender.getClientHostname();
-        String ipAddress = sender.getClientIpAddress();
-        String username = sender.getUsername();
-        dbManager.saveMessage(hostname, ipAddress, username, originalMessage, serverPort);
-        
-        // Kiểm tra nếu tin nhắn chứa nội dung mã hóa
-        if (!encryptedContent.isEmpty()) {
-            // Log tin nhắn trên server với thông tin so sánh
-            gui.logCompareMessage(username, encryptedContent, cipher.decrypt(encryptedContent));
-        } else {
-            // Log tin nhắn trên server (thông báo hệ thống)
+            
             gui.logMessage(message);
+        } else {
+            // Tin nhắn người dùng - gửi nguyên trạng vì đã được mã hóa từ client
+            String senderName = message.substring(0, message.indexOf(": "));
+            String encryptedContent = message.substring(message.indexOf(": ") + 2);
+            
+            synchronized (clients) {
+                for (ClientHandler client : clients) {
+                    if (client != sender) {
+                        // Gửi tin nhắn đã mã hóa đến các client khác
+                        client.sendMessage(message);
+                    }
+                }
+            }
+            
+            // Lưu cả phiên bản gốc và mã hóa vào database
+            String decryptedContent = cipher.decrypt(encryptedContent);
+            String originalMessage = senderName + ": " + decryptedContent;
+            
+            String hostname = sender.getClientHostname();
+            String ipAddress = sender.getClientIpAddress();
+            String username = sender.getUsername();
+            
+            // Lưu với cả tin nhắn gốc và đã mã hóa
+            dbManager.saveMessageWithEncryption(hostname, ipAddress, username, 
+                                            originalMessage, message, serverPort);
+            
+            // Log để hiển thị
+            gui.logCompareMessage(username, encryptedContent, decryptedContent);
         }
     }
     
     public void removeClient(ClientHandler client) {
         synchronized (clients) {
-            if (clients.remove(client)) {
-                int currentCount = clients.size();
-                gui.updateClientCount(currentCount);
+            clients.remove(client);
+            
+            if (client.getUsername() != null) {
+                // Xóa khỏi map người dùng-client
+                userClientMap.remove(client.getUsername());
                 
-                // Log thông tin về số client hiện tại
-                gui.logMessage("Client đã ngắt kết nối. Số client hiện tại: " + currentCount);
+                // Broadcast thông báo người dùng đã rời đi
+                broadcastMessage(client.getUsername() + " đã rời chat!", null);
+                
+                // Cập nhật danh sách người dùng cho tất cả client còn lại
+                sendUserList(null);
             }
+            
+            int currentCount = clients.size();
+            gui.updateClientCount(currentCount);
+            gui.logMessage("Client đã ngắt kết nối. Số client hiện tại: " + currentCount);
         }
-    }
+    }  
     
     public void addClient(ClientHandler client) {
         synchronized (clients) {
             clients.add(client);
-            totalClients++;
             int currentCount = clients.size();
             
             gui.updateClientCount(currentCount);
-            gui.updateTotalClients(totalClients);
-            
-            // Log thông tin về số client hiện tại
-            gui.logMessage("Client mới kết nối. Số client hiện tại: " + currentCount + 
-                          ", tổng số client đã kết nối: " + totalClients);
+            gui.logMessage("Client mới kết nối. Số client hiện tại: " + currentCount);
+        }
+    }
+    
+    public void broadcastFileHeader(String header, ClientHandler sender) {
+        synchronized (clients) {
+            for (ClientHandler client : clients) {
+                if (client != sender) {
+                    client.sendMessage(header);
+                }
+            }
+        }
+    }
+    
+    public void sendFileHeaderToUser(String header, String recipient) {
+        synchronized (clients) {
+            for (ClientHandler client : clients) {
+                if (client.getUsername().equals(recipient)) {
+                    client.sendMessage(header);
+                    logger.info("Sent file header to " + recipient);
+                    break;
+                }
+            }
         }
     }
     

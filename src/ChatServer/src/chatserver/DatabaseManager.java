@@ -6,6 +6,8 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DatabaseManager {
     private Connection connection;
@@ -14,7 +16,6 @@ public class DatabaseManager {
     private VigenereCipher cipher;
     
     public DatabaseManager() {
-        // Tạo đường dẫn đến thư mục database
         File dbDir = new File("database");
         if (!dbDir.exists()) {
             dbDir.mkdir();
@@ -26,14 +27,11 @@ public class DatabaseManager {
     
     public boolean connect() {
         try {
-            // Kiểm tra driver SQLite
             Class.forName("org.sqlite.JDBC");
             
-            // Kết nối đến database (tự động tạo nếu chưa tồn tại)
             connection = DriverManager.getConnection(dbPath);
             connection.setAutoCommit(true);
             
-            // Tạo cấu trúc database nếu chưa tồn tại
             initializeDatabase();
             
             logger.info("Kết nối đến database thành công!");
@@ -46,18 +44,15 @@ public class DatabaseManager {
     
     private void initializeDatabase() {
         try {
-            // Đọc file SQL để khởi tạo
             File sqlFile = new File("database/chatapp.sql");
             
             if (sqlFile.exists()) {
-                // Nếu file SQL tồn tại, đọc và thực thi nó
                 try (Statement stmt = connection.createStatement();
                      java.util.Scanner scanner = new java.util.Scanner(sqlFile)) {
                     
                     StringBuilder sqlBuilder = new StringBuilder();
                     while (scanner.hasNextLine()) {
                         String line = scanner.nextLine().trim();
-                        // Bỏ qua các dòng comment
                         if (line.startsWith("--") || line.isEmpty()) continue;
                         
                         sqlBuilder.append(line);
@@ -68,15 +63,12 @@ public class DatabaseManager {
                     }
                 }
             } else {
-                // Nếu file không tồn tại, tạo các bảng cần thiết
                 createDefaultTables();
             }
             
-            // Đảm bảo có cột server_port trong các bảng
             ensureServerPortColumn();
-            
-            // Đảm bảo có các cột cần thiết cho việc mã hóa
             ensureEncryptionColumns();
+            ensureChatHistoryTable();
             
             logger.info("Database được khởi tạo thành công");
         } catch (SQLException | IOException ex) {
@@ -86,7 +78,6 @@ public class DatabaseManager {
     
     private void ensureServerPortColumn() {
         try (Statement stmt = connection.createStatement()) {
-            // Kiểm tra xem cột server_port đã tồn tại trong bảng messages chưa
             ResultSet rs = stmt.executeQuery("PRAGMA table_info(messages)");
             boolean hasServerPort = false;
             while (rs.next()) {
@@ -96,13 +87,11 @@ public class DatabaseManager {
                 }
             }
             
-            // Thêm cột server_port nếu chưa có
             if (!hasServerPort) {
                 stmt.execute("ALTER TABLE messages ADD COLUMN server_port INTEGER");
                 stmt.execute("CREATE INDEX IF NOT EXISTS idx_messages_port ON messages(server_port)");
             }
             
-            // Kiểm tra xem cột server_port đã tồn tại trong bảng connection_log chưa
             rs = stmt.executeQuery("PRAGMA table_info(connection_log)");
             hasServerPort = false;
             while (rs.next()) {
@@ -112,7 +101,6 @@ public class DatabaseManager {
                 }
             }
             
-            // Thêm cột server_port nếu chưa có
             if (!hasServerPort) {
                 stmt.execute("ALTER TABLE connection_log ADD COLUMN server_port INTEGER");
                 stmt.execute("CREATE INDEX IF NOT EXISTS idx_connection_log_port ON connection_log(server_port)");
@@ -124,7 +112,6 @@ public class DatabaseManager {
     
     private void ensureEncryptionColumns() {
         try (Statement stmt = connection.createStatement()) {
-            // Kiểm tra xem cột original_message đã tồn tại trong bảng messages chưa
             ResultSet rs = stmt.executeQuery("PRAGMA table_info(messages)");
             boolean hasOriginalMessage = false;
             boolean hasEncryptedMessage = false;
@@ -138,17 +125,14 @@ public class DatabaseManager {
                 }
             }
             
-            // Thêm cột original_message nếu chưa có
             if (!hasOriginalMessage) {
                 stmt.execute("ALTER TABLE messages ADD COLUMN original_message TEXT");
             }
             
-            // Thêm cột encrypted_message nếu chưa có
             if (!hasEncryptedMessage) {
                 stmt.execute("ALTER TABLE messages ADD COLUMN encrypted_message TEXT");
             }
             
-            // Thêm chỉ mục cho cột original_message
             stmt.execute("CREATE INDEX IF NOT EXISTS idx_messages_original ON messages(original_message)");
             stmt.execute("CREATE INDEX IF NOT EXISTS idx_messages_encrypted ON messages(encrypted_message)");
             
@@ -157,9 +141,27 @@ public class DatabaseManager {
         }
     }
     
+    private void ensureChatHistoryTable() {
+        try (Statement stmt = connection.createStatement()) {
+            stmt.execute("CREATE TABLE IF NOT EXISTS chat_history ("
+                    + "id INTEGER PRIMARY KEY AUTOINCREMENT,"
+                    + "server_port INTEGER,"
+                    + "username TEXT,"
+                    + "message TEXT,"
+                    + "original_message TEXT,"
+                    + "encrypted_message TEXT,"
+                    + "timestamp DATETIME DEFAULT CURRENT_TIMESTAMP"
+                    + ");");
+            
+            stmt.execute("CREATE INDEX IF NOT EXISTS idx_history_port ON chat_history(server_port);");
+            stmt.execute("CREATE INDEX IF NOT EXISTS idx_history_username ON chat_history(username);");
+        } catch (SQLException ex) {
+            logger.log(Level.SEVERE, "Lỗi khi tạo bảng chat_history", ex);
+        }
+    }
+    
     private void createDefaultTables() throws SQLException {
         try (Statement stmt = connection.createStatement()) {
-            // Tạo bảng messages
             stmt.execute("CREATE TABLE IF NOT EXISTS messages ("
                     + "id INTEGER PRIMARY KEY AUTOINCREMENT,"
                     + "hostname TEXT,"
@@ -172,7 +174,6 @@ public class DatabaseManager {
                     + "timestamp DATETIME DEFAULT CURRENT_TIMESTAMP"
                     + ");");
             
-            // Tạo bảng users
             stmt.execute("CREATE TABLE IF NOT EXISTS users ("
                     + "id INTEGER PRIMARY KEY AUTOINCREMENT,"
                     + "username TEXT UNIQUE,"
@@ -182,7 +183,6 @@ public class DatabaseManager {
                     + "connection_count INTEGER DEFAULT 1"
                     + ");");
             
-            // Tạo bảng connection_log
             stmt.execute("CREATE TABLE IF NOT EXISTS connection_log ("
                     + "id INTEGER PRIMARY KEY AUTOINCREMENT,"
                     + "username TEXT,"
@@ -192,7 +192,6 @@ public class DatabaseManager {
                     + "timestamp DATETIME DEFAULT CURRENT_TIMESTAMP"
                     + ");");
             
-            // Tạo bảng files để lưu thông tin file được gửi
             stmt.execute("CREATE TABLE IF NOT EXISTS files ("
                     + "id INTEGER PRIMARY KEY AUTOINCREMENT,"
                     + "sender_username TEXT,"
@@ -204,7 +203,16 @@ public class DatabaseManager {
                     + "sent_timestamp DATETIME DEFAULT CURRENT_TIMESTAMP"
                     + ");");
             
-            // Tạo các chỉ mục
+            stmt.execute("CREATE TABLE IF NOT EXISTS chat_history ("
+                    + "id INTEGER PRIMARY KEY AUTOINCREMENT,"
+                    + "server_port INTEGER,"
+                    + "username TEXT,"
+                    + "message TEXT,"
+                    + "original_message TEXT,"
+                    + "encrypted_message TEXT,"
+                    + "timestamp DATETIME DEFAULT CURRENT_TIMESTAMP"
+                    + ");");
+            
             stmt.execute("CREATE INDEX IF NOT EXISTS idx_messages_username ON messages(username);");
             stmt.execute("CREATE INDEX IF NOT EXISTS idx_messages_port ON messages(server_port);");
             stmt.execute("CREATE INDEX IF NOT EXISTS idx_messages_original ON messages(original_message);");
@@ -214,6 +222,8 @@ public class DatabaseManager {
             stmt.execute("CREATE INDEX IF NOT EXISTS idx_connection_log_port ON connection_log(server_port);");
             stmt.execute("CREATE INDEX IF NOT EXISTS idx_files_sender ON files(sender_username);");
             stmt.execute("CREATE INDEX IF NOT EXISTS idx_files_port ON files(server_port);");
+            stmt.execute("CREATE INDEX IF NOT EXISTS idx_history_port ON chat_history(server_port);");
+            stmt.execute("CREATE INDEX IF NOT EXISTS idx_history_username ON chat_history(username);");
         }
     }
     
@@ -230,7 +240,6 @@ public class DatabaseManager {
     
     public void saveMessage(String hostname, String ipAddress, String username, String message, int port) {
         try {
-            // Phân tách nội dung tin nhắn từ username
             String originalContent = "";
             if (message.startsWith(username + ": ")) {
                 originalContent = message.substring((username + ": ").length());
@@ -238,19 +247,29 @@ public class DatabaseManager {
                 originalContent = message;
             }
             
-            // Mã hóa nội dung gốc
             String encryptedContent = cipher.encrypt(originalContent);
             
-            // Lưu tin nhắn với đầy đủ thông tin
+            // Lưu vào messages
             String sql = "INSERT INTO messages (hostname, ip_address, username, message, original_message, encrypted_message, server_port) VALUES (?, ?, ?, ?, ?, ?, ?)";
             try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
                 pstmt.setString(1, hostname);
                 pstmt.setString(2, ipAddress);
                 pstmt.setString(3, username);
-                pstmt.setString(4, message);  // Lưu tin nhắn đầy đủ
-                pstmt.setString(5, originalContent);  // Lưu nội dung gốc
-                pstmt.setString(6, encryptedContent);  // Lưu nội dung đã mã hóa
+                pstmt.setString(4, message);
+                pstmt.setString(5, originalContent);
+                pstmt.setString(6, encryptedContent);
                 pstmt.setInt(7, port);
+                pstmt.executeUpdate();
+            }
+            
+            // Lưu vào chat_history
+            sql = "INSERT INTO chat_history (server_port, username, message, original_message, encrypted_message) VALUES (?, ?, ?, ?, ?)";
+            try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
+                pstmt.setInt(1, port);
+                pstmt.setString(2, username);
+                pstmt.setString(3, message);
+                pstmt.setString(4, originalContent);
+                pstmt.setString(5, encryptedContent);
                 pstmt.executeUpdate();
             }
         } catch (SQLException ex) {
@@ -266,10 +285,20 @@ public class DatabaseManager {
                 pstmt.setString(1, hostname);
                 pstmt.setString(2, ipAddress);
                 pstmt.setString(3, username);
-                pstmt.setString(4, originalMessage); // Tin nhắn hiển thị (thường là bản gốc)
-                pstmt.setString(5, originalMessage.contains(": ") ? originalMessage.split(": ", 2)[1] : originalMessage); // Chỉ nội dung gốc
-                pstmt.setString(6, encryptedMessage.contains(": ") ? encryptedMessage.split(": ", 2)[1] : encryptedMessage); // Chỉ nội dung mã hóa
+                pstmt.setString(4, originalMessage);
+                pstmt.setString(5, originalMessage.contains(": ") ? originalMessage.split(": ", 2)[1] : originalMessage);
+                pstmt.setString(6, encryptedMessage.contains(": ") ? encryptedMessage.split(": ", 2)[1] : encryptedMessage);
                 pstmt.setInt(7, port);
+                pstmt.executeUpdate();
+            }
+            
+            sql = "INSERT INTO chat_history (server_port, username, message, original_message, encrypted_message) VALUES (?, ?, ?, ?, ?)";
+            try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
+                pstmt.setInt(1, port);
+                pstmt.setString(2, username);
+                pstmt.setString(3, originalMessage);
+                pstmt.setString(4, originalMessage.contains(": ") ? originalMessage.split(": ", 2)[1] : originalMessage);
+                pstmt.setString(5, encryptedMessage.contains(": ") ? encryptedMessage.split(": ", 2)[1] : encryptedMessage);
                 pstmt.executeUpdate();
             }
         } catch (SQLException ex) {
@@ -279,7 +308,6 @@ public class DatabaseManager {
     
     public void logConnection(String username, String ipAddress, boolean isConnecting, int port) {
         try {
-            // Ghi log kết nối/ngắt kết nối
             String action = isConnecting ? "connect" : "disconnect";
             String sql = "INSERT INTO connection_log (username, ip_address, action, server_port) VALUES (?, ?, ?, ?)";
             
@@ -291,16 +319,13 @@ public class DatabaseManager {
                 pstmt.executeUpdate();
             }
             
-            // Cập nhật bảng users
             if (isConnecting) {
-                // Kiểm tra người dùng đã tồn tại chưa
                 try (PreparedStatement checkStmt = connection.prepareStatement(
                         "SELECT id, connection_count FROM users WHERE username = ?")) {
                     checkStmt.setString(1, username);
                     ResultSet rs = checkStmt.executeQuery();
                     
                     if (rs.next()) {
-                        // Người dùng đã tồn tại, cập nhật thông tin
                         int userId = rs.getInt("id");
                         int connectionCount = rs.getInt("connection_count") + 1;
                         
@@ -312,7 +337,6 @@ public class DatabaseManager {
                             updateStmt.executeUpdate();
                         }
                     } else {
-                        // Người dùng mới, thêm vào database
                         try (PreparedStatement insertStmt = connection.prepareStatement(
                                 "INSERT INTO users (username, ip_address) VALUES (?, ?)")) {
                             insertStmt.setString(1, username);
@@ -325,6 +349,35 @@ public class DatabaseManager {
         } catch (SQLException ex) {
             logger.log(Level.SEVERE, "Lỗi khi ghi log kết nối", ex);
         }
+    }
+    
+    // Lấy lịch sử chat
+    public List<ChatMessage> getChatHistory(int port, int limit) {
+        List<ChatMessage> messages = new ArrayList<>();
+        String sql = "SELECT username, message, original_message, encrypted_message, timestamp FROM chat_history " +
+                     "WHERE server_port = ? ORDER BY timestamp DESC LIMIT ?";
+        
+        try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
+            pstmt.setInt(1, port);
+            pstmt.setInt(2, limit);
+            
+            ResultSet rs = pstmt.executeQuery();
+            
+            while (rs.next()) {
+                String username = rs.getString("username");
+                String message = rs.getString("message");
+                String originalMessage = rs.getString("original_message");
+                String encryptedMessage = rs.getString("encrypted_message");
+                long timestamp = rs.getTimestamp("timestamp").getTime();
+                
+                messages.add(0, new ChatMessage(username, message, originalMessage, encryptedMessage, timestamp));
+            }
+            
+        } catch (SQLException e) {
+            logger.log(Level.WARNING, "Error retrieving chat history", e);
+        }
+        
+        return messages;
     }
     
     public ResultSet getRecentMessages(int limit, int port) {
@@ -403,7 +456,6 @@ public class DatabaseManager {
         try {
             connection.setAutoCommit(false);
             
-            // Xóa tin nhắn của port
             String sqlDeleteMessages = "DELETE FROM messages WHERE server_port = ?";
             try (PreparedStatement pstmt = connection.prepareStatement(sqlDeleteMessages)) {
                 pstmt.setInt(1, port);
@@ -411,7 +463,6 @@ public class DatabaseManager {
                 logger.info("Đã xóa " + messagesDeleted + " tin nhắn từ port " + port);
             }
             
-            // Xóa log kết nối của port
             String sqlDeleteConnections = "DELETE FROM connection_log WHERE server_port = ?";
             try (PreparedStatement pstmt = connection.prepareStatement(sqlDeleteConnections)) {
                 pstmt.setInt(1, port);
@@ -419,12 +470,18 @@ public class DatabaseManager {
                 logger.info("Đã xóa " + connectionsDeleted + " log kết nối từ port " + port);
             }
             
-            // Xóa thông tin file của port
             String sqlDeleteFiles = "DELETE FROM files WHERE server_port = ?";
             try (PreparedStatement pstmt = connection.prepareStatement(sqlDeleteFiles)) {
                 pstmt.setInt(1, port);
                 int filesDeleted = pstmt.executeUpdate();
                 logger.info("Đã xóa " + filesDeleted + " thông tin file từ port " + port);
+            }
+            
+            String sqlDeleteHistory = "DELETE FROM chat_history WHERE server_port = ?";
+            try (PreparedStatement pstmt = connection.prepareStatement(sqlDeleteHistory)) {
+                pstmt.setInt(1, port);
+                int historyDeleted = pstmt.executeUpdate();
+                logger.info("Đã xóa " + historyDeleted + " tin nhắn lịch sử từ port " + port);
             }
             
             connection.commit();
@@ -448,7 +505,8 @@ public class DatabaseManager {
             writer.println();
 
             try (PreparedStatement stmt = connection.prepareStatement(
-                    "SELECT timestamp, username, message, original_message, encrypted_message FROM messages WHERE server_port = ? ORDER BY timestamp")) {
+                    "SELECT timestamp, username, message, original_message, encrypted_message FROM messages " +
+                    "WHERE server_port = ? ORDER BY timestamp")) {
                 stmt.setInt(1, port);
                 ResultSet rs = stmt.executeQuery();
                 
@@ -463,7 +521,6 @@ public class DatabaseManager {
                     
                     writer.println("[" + timestamp + "] " + username + ": " + message);
                     
-                    // Chỉ in thông tin mã hóa nếu có
                     if (originalMsg != null && encryptedMsg != null && 
                         !originalMsg.isEmpty() && !encryptedMsg.isEmpty()) {
                         writer.println("   - Nội dung gốc: " + originalMsg);
@@ -595,7 +652,6 @@ public class DatabaseManager {
                     
                     writer.println("[" + timestamp + "] " + username + ": " + message);
                     
-                    // Chỉ in thông tin mã hóa nếu có
                     if (originalMsg != null && encryptedMsg != null && 
                         !originalMsg.isEmpty() && !encryptedMsg.isEmpty()) {
                         writer.println("   - Nội dung gốc: " + originalMsg);
@@ -618,7 +674,6 @@ public class DatabaseManager {
         }
     }
     
-    // Lưu thông tin file đã gửi
     public void saveFileInfo(String username, String fileName, String fileType, long fileSize, String filePath, int port) {
         try {
             String sql = "INSERT INTO files (sender_username, file_name, file_type, file_size, file_path, server_port) VALUES (?, ?, ?, ?, ?, ?)";
@@ -636,7 +691,6 @@ public class DatabaseManager {
         }
     }
     
-    // Lấy danh sách file đã gửi
     public ResultSet getFiles(int port) {
         try {
             String sql = "SELECT id, sender_username, file_name, file_type, file_size, file_path, sent_timestamp " +
@@ -650,15 +704,14 @@ public class DatabaseManager {
         }
     }
     
-    // Kiểm tra thông tin đăng nhập
     public boolean checkLogin(String username, String password) {
         try {
             String sql = "SELECT id FROM users WHERE username = ? AND password = ?";
             try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
                 pstmt.setString(1, username);
-                pstmt.setString(2, password); // Trong thực tế, password nên được mã hóa
+                pstmt.setString(2, password);
                 ResultSet rs = pstmt.executeQuery();
-                return rs.next(); // Có kết quả = đăng nhập thành công
+                return rs.next();
             }
         } catch (SQLException ex) {
             logger.log(Level.SEVERE, "Lỗi khi kiểm tra đăng nhập", ex);
@@ -666,24 +719,21 @@ public class DatabaseManager {
         }
     }
     
-    // Đăng ký người dùng mới
     public boolean registerUser(String username, String password) {
         try {
-            // Kiểm tra người dùng đã tồn tại chưa
             String checkSql = "SELECT id FROM users WHERE username = ?";
             try (PreparedStatement checkStmt = connection.prepareStatement(checkSql)) {
                 checkStmt.setString(1, username);
                 ResultSet rs = checkStmt.executeQuery();
                 if (rs.next()) {
-                    return false; // Người dùng đã tồn tại
+                    return false;
                 }
             }
             
-            // Đăng ký người dùng mới
             String insertSql = "INSERT INTO users (username, password) VALUES (?, ?)";
             try (PreparedStatement pstmt = connection.prepareStatement(insertSql)) {
                 pstmt.setString(1, username);
-                pstmt.setString(2, password); // Trong thực tế, password nên được mã hóa
+                pstmt.setString(2, password);
                 pstmt.executeUpdate();
                 return true;
             }

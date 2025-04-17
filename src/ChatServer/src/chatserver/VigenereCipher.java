@@ -1,30 +1,26 @@
 package chatserver;
 
 public class VigenereCipher {
-    private static final String DEFAULT_KEY = "CHATAPP";
+    private static final String KEY = "SECRETKEY"; // Khóa mặc định
     
     public String encrypt(String text) {
-        return encrypt(text, DEFAULT_KEY);
-    }
-    
-    public String decrypt(String text) {
-        return decrypt(text, DEFAULT_KEY);
-    }
-    
-    public String encrypt(String text, String key) {
         StringBuilder result = new StringBuilder();
+        String key = KEY;
         
         for (int i = 0, j = 0; i < text.length(); i++) {
             char c = text.charAt(i);
+            
             if (Character.isLetter(c)) {
-                boolean isUpperCase = Character.isUpperCase(c);
-                char base = isUpperCase ? 'A' : 'a';
-                char keyChar = Character.toUpperCase(key.charAt(j % key.length()));
+                boolean isUpper = Character.isUpperCase(c);
+                c = Character.toUpperCase(c);
                 
-                // Công thức mã hóa Vigenere
-                int encryptedChar = (c - base + (keyChar - 'A')) % 26 + base;
-                result.append((char) encryptedChar);
+                char keyChar = Character.toUpperCase(key.charAt(j % key.length()));
                 j++;
+                
+                int shift = keyChar - 'A';
+                char encryptedChar = (char) ((c - 'A' + shift) % 26 + 'A');
+                
+                result.append(isUpper ? encryptedChar : Character.toLowerCase(encryptedChar));
             } else {
                 result.append(c);
             }
@@ -33,20 +29,24 @@ public class VigenereCipher {
         return result.toString();
     }
     
-    public String decrypt(String text, String key) {
+    public String decrypt(String text) {
         StringBuilder result = new StringBuilder();
+        String key = KEY;
         
         for (int i = 0, j = 0; i < text.length(); i++) {
             char c = text.charAt(i);
+            
             if (Character.isLetter(c)) {
-                boolean isUpperCase = Character.isUpperCase(c);
-                char base = isUpperCase ? 'A' : 'a';
-                char keyChar = Character.toUpperCase(key.charAt(j % key.length()));
+                boolean isUpper = Character.isUpperCase(c);
+                c = Character.toUpperCase(c);
                 
-                // Công thức giải mã Vigenere
-                int decryptedChar = (c - base - (keyChar - 'A') + 26) % 26 + base;
-                result.append((char) decryptedChar);
+                char keyChar = Character.toUpperCase(key.charAt(j % key.length()));
                 j++;
+                
+                int shift = keyChar - 'A';
+                char decryptedChar = (char) ((c - 'A' - shift + 26) % 26 + 'A');
+                
+                result.append(isUpper ? decryptedChar : Character.toLowerCase(decryptedChar));
             } else {
                 result.append(c);
             }
